@@ -13,7 +13,7 @@ const ProjectSlugDetailPage = ({ project }) => {
   const PAGE_TITLE = project?.title || 'Project not found';
   const PAGE_DESCRIPTION = project?.description || '';
 
-  const canonicalUrl = `${process.env.DOMAIN}/projects/${project?.slug || ''}`;
+  const canonicalUrl = `htts://unforaimcode.vercel.app/projects/${project?.slug || ''}`;
 
   return (
     <>
