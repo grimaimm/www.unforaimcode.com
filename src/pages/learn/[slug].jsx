@@ -56,7 +56,7 @@ const LearnSlug = ({ learn }) => {
   const PAGE_TITLE = learn.title || 'Learn Details';
   const PAGE_DESCRIPTION = learn.description || 'Details of the selected Learn post.';
 
-  const canonicalUrl = `${process.env.DOMAIN}/learn/${learn?.slug || ''}`;
+  const canonicalUrl = `htts://unforaimcode.vercel.app/learn/${learn?.slug || ''}`;
 
   return (
     <>
