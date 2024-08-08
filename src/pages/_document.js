@@ -35,6 +35,8 @@ export default function Document() {
           color="#121212"
         />
         <meta name="theme-color" content="#121212" />
+        <meta name="keywords" content="unforaimcode, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python" />
+        <meta name="google-site-verification" content="4UATjALUSEx0uYrFZkjp5F0jjuA_TXSHDjX3Jzpm-HQ" />
       </Head>
       <body className={onestSans.className}>
         <Main />
