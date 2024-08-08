@@ -15,7 +15,7 @@ export async function getServerSideProps() {
   };
 }
 
-const ProjectList = ({ projects }) => {
+const ProjectList = ({ projects, loadMore, hasMore }) => {
   const [filteredProjects, setFilteredProjects] = useState([]);
 
   useEffect(() => {

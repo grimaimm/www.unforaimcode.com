@@ -169,7 +169,7 @@ const LessonSlug = ({ lessonDetail, learn, initialMarkdownContent, currentIndex 
     : '';
 
   const PAGE_DESCRIPTION = `Details of the lesson: ${lessonDetail.title}`;
-  const canonicalUrl = `http://localhost:3000/learn/${learn?.slug || ''}/${lessonDetail?.subslug || ''}`;
+  const canonicalUrl = `${process.env.DOMAIN}/learn/${learn?.slug || ''}/${lessonDetail?.subslug || ''}`;
 
   return (
     <>

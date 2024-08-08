@@ -13,7 +13,7 @@ const ProjectSlugDetailPage = ({ project }) => {
   const PAGE_TITLE = project?.title || 'Project not found';
   const PAGE_DESCRIPTION = project?.description || '';
 
-  const canonicalUrl = `http://localhost:3000/projects/${project?.slug || ''}`;
+  const canonicalUrl = `${process.env.DOMAIN}/projects/${project?.slug || ''}`;
 
   return (
     <>

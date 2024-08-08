@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 
 const API_KEY = process.env.WAKATIME_API_KEY;

@@ -15,7 +15,7 @@ const BlogSlugDetailPage = ({ blog }) => {
     return <div>No blog found</div>;
   }
 
-  const canonicalUrl = `http://localhost:3000/blog/${blog.slug || ''}`;
+  const canonicalUrl = `${process.env.DOMAIN}/blog/${blog.slug || ''}`;
 
   return (
     <>

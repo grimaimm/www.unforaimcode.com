@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://unforaimcode.vercel.app
+
+# Sitemaps
+Sitemap: https://unforaimcode.vercel.app/sitemap.xml

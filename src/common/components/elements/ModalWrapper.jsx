@@ -6,7 +6,7 @@ const ModalWrapper = ({ isOpen, onClose, children }) => {
     <Transition appear show={isOpen} as={React.Fragment}>
       <Dialog as="div" className="relative z-10" onClose={onClose}>
         <Transition.Child
-          as={Fragment}
+          as={React.Fragment}
           enter="ease-out duration-300"
           enterFrom="opacity-0"
           enterTo="opacity-100"

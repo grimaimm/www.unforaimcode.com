@@ -32,4 +32,7 @@ const NavigationSection = React.memo(
   }
 );
 
+// Explicitly set the display name
+NavigationSection.displayName = "NavigationSection";
+
 export default NavigationSection;
