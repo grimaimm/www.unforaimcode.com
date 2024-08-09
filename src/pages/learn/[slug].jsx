@@ -10,7 +10,8 @@ import path from 'path';
 
 // Function to analyze difficulty based on markdown content
 function analyzeDifficulty(markdownContent) {
-  const codeBlockCount = (markdownContent.match(/```[\s\S]*?```/g) || []).length;
+  const codeBlockCount = (markdownContent.match(/```[\s\S]*?```/g) || [])
+    .length;
 
   if (codeBlockCount === 0) return 'easy';
   if (codeBlockCount <= 2) return 'easy';
@@ -26,7 +27,15 @@ export async function getServerSideProps(context) {
   if (learn && Array.isArray(learn.content)) {
     // Calculate difficulty for each content item
     for (const contentItem of learn.content) {
-      const markdownFile = path.join(process.cwd(), 'src', 'contents', 'learn', slug, 'en', `${contentItem.slug}.md`);
+      const markdownFile = path.join(
+        process.cwd(),
+        'src',
+        'contents',
+        'learn',
+        slug,
+        'en',
+        `${contentItem.slug}.md`,
+      );
       let markdownContent = '';
       try {
         markdownContent = await fs.readFile(markdownFile, 'utf8');
@@ -54,7 +63,8 @@ const LearnSlug = ({ learn }) => {
   }
 
   const PAGE_TITLE = learn.title || 'Learn Details';
-  const PAGE_DESCRIPTION = learn.description || 'Details of the selected Learn post.';
+  const PAGE_DESCRIPTION =
+    learn.description || 'Details of the selected Learn post.';
 
   const canonicalUrl = `htts://unforaimcode.vercel.app/learn/${learn?.slug || ''}`;
 
@@ -80,8 +90,8 @@ const LearnSlug = ({ learn }) => {
           siteName: 'Learn Muhammad Rahim',
         }}
       />
-      <ContainerCenter data-aos="fade-up">
-        <BackButton url="/learn" />
+      <ContainerCenter data-aos='fade-up'>
+        <BackButton url='/learn' />
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <LessonList learn={learn} />
       </ContainerCenter>

@@ -1,9 +1,9 @@
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
   /* Onyx Color */
@@ -39,7 +39,7 @@
   --bg-charcoal-light-300: rgb(230, 230, 230); /* #e6e6e6 */
   --bg-charcoal-light-400: rgb(240, 240, 240); /* #f0f0f0 */
   --bg-charcoal-light-500: rgb(250, 250, 250); /* #fafafa */
-  
+
   --bg-charcoal-dark-100: rgb(100, 100, 100); /* #646464 */
   --bg-charcoal-dark-200: rgb(90, 90, 90); /* #5a5a5a */
   --bg-charcoal-dark-300: rgb(90, 90, 90); /* #5a5a5a */
@@ -51,18 +51,17 @@
   --bg-charcoal-dark-900: rgb(20, 20, 20); /* #141414 */
   --bg-charcoal-dark-950: rgb(10, 10, 10); /* #0a0a0a */
 
-
-  --zinc-50 : rgb(250,250,250); /*#fafafa*/
-  --zinc-100: rgb(244,244,245); /*#f4f4f5*/
-  --zinc-200: rgb(228,228,231); /*#e4e4e7*/
-  --zinc-300: rgb(212,212,216); /*#d4d4d8*/
-  --zinc-400: rgb(161,161,170); /*#a1a1aa*/
-  --zinc-500: rgb(113,113,122); /*#71717a*/
-  --zinc-600: rgb(82,82,91);    /*#52525b*/
-  --zinc-700: rgb(63,63,70);    /*#3f3f46*/
-  --zinc-800: rgb(39,39,42);    /*#27272a*/
-  --zinc-900: rgb(24,24,27);    /*#18181b*/
-  --zinc-950: rgb(9,9,11);      /*#09090b*/
+  --zinc-50: rgb(250, 250, 250); /*#fafafa*/
+  --zinc-100: rgb(244, 244, 245); /*#f4f4f5*/
+  --zinc-200: rgb(228, 228, 231); /*#e4e4e7*/
+  --zinc-300: rgb(212, 212, 216); /*#d4d4d8*/
+  --zinc-400: rgb(161, 161, 170); /*#a1a1aa*/
+  --zinc-500: rgb(113, 113, 122); /*#71717a*/
+  --zinc-600: rgb(82, 82, 91); /*#52525b*/
+  --zinc-700: rgb(63, 63, 70); /*#3f3f46*/
+  --zinc-800: rgb(39, 39, 42); /*#27272a*/
+  --zinc-900: rgb(24, 24, 27); /*#18181b*/
+  --zinc-950: rgb(9, 9, 11); /*#09090b*/
 }
 
 /* ------------------------------------------------------------------------------------------------------------- */
@@ -114,8 +113,6 @@
   }
 }
 
-
-
 /* ------------------------------------------------------------------------------------------------------------- */
 /* BASE LAYOUT */
 /* ------------------------------------------------------------------------------------------------------------- */
@@ -127,8 +124,11 @@
   min-height: 100vh;
   min-width: 0;
   overflow: hidden;
-  transition: margin-left 0.35s ease-in-out, left 0.35s ease-in-out,
-    margin-right 0.35s ease-in-out, right 0.35s ease-in-out;
+  transition:
+    margin-left 0.35s ease-in-out,
+    left 0.35s ease-in-out,
+    margin-right 0.35s ease-in-out,
+    right 0.35s ease-in-out;
   width: 100%;
 }
 * ::-webkit-scrollbar {
@@ -252,7 +252,10 @@
 }
 
 .custom-toast-success {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops)) !important;
+  background-image: linear-gradient(
+    to right,
+    var(--tw-gradient-stops)
+  ) !important;
   --tw-gradient-from-position: 0%;
   --tw-gradient-to-position: 100%;
   --tw-gradient-stops: rgb(255 255 255), rgb(250, 255, 250);
@@ -260,7 +263,10 @@
 }
 
 .custom-toast-error {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops)) !important;
+  background-image: linear-gradient(
+    to right,
+    var(--tw-gradient-stops)
+  ) !important;
   --tw-gradient-from-position: 0%;
   --tw-gradient-to-position: 100%;
   --tw-gradient-stops: rgb(255 255 255), rgb(255, 250, 250);
@@ -269,7 +275,10 @@
 }
 
 .dark\:custom-toast-success-dark:is(.dark *) {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops)) !important;
+  background-image: linear-gradient(
+    to right,
+    var(--tw-gradient-stops)
+  ) !important;
   --tw-gradient-from-position: 0%;
   --tw-gradient-to-position: 100%;
   --tw-gradient-stops: rgb(39 39 42), rgb(24 24 27);
@@ -278,7 +287,10 @@
 }
 
 .dark\:custom-toast-error-dark:is(.dark *) {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops)) !important;
+  background-image: linear-gradient(
+    to right,
+    var(--tw-gradient-stops)
+  ) !important;
   --tw-gradient-from-position: 0%;
   --tw-gradient-to-position: 100%;
   --tw-gradient-stops: rgb(39 39 42), rgb(24 24 27);
@@ -291,5 +303,6 @@
 }
 
 .fraction__label {
-  font-family: 'Roboto Mono', 'Menlo', 'dejavu sans mono', 'Consolas', 'Lucida Console', monospace;
+  font-family: 'Roboto Mono', 'Menlo', 'dejavu sans mono', 'Consolas',
+    'Lucida Console', monospace;
 }

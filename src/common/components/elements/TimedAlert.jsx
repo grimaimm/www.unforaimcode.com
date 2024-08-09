@@ -11,9 +11,9 @@ const TimedAlert = ({ message, duration, onClose }) => {
   }, [duration, onClose]);
 
   return (
-    <div className="fixed z-50 inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-6 rounded shadow-md">
-        <h2 className="text-lg font-semibold mb-4">Notice</h2>
+    <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'>
+      <div className='rounded bg-white p-6 shadow-md'>
+        <h2 className='mb-4 text-lg font-semibold'>Notice</h2>
         <p>{message}</p>
       </div>
     </div>

@@ -1,12 +1,12 @@
-import { useNotifStore } from "../stores/useNotifStore"
+import { useNotifStore } from '../stores/useNotifStore';
 
 export function useNotif() {
-  const { showNotif, setNotifText } = useNotifStore()
+  const { showNotif, setNotifText } = useNotifStore();
 
   function notif(text) {
-    setNotifText(text)
-    showNotif()
+    setNotifText(text);
+    showNotif();
   }
 
-  return notif
+  return notif;
 }

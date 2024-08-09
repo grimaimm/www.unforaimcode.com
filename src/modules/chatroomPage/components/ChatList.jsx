@@ -1,11 +1,16 @@
 // src/modules/chatroomPage/components/ChatList.jsx
-import * as React from "react";
-import ChatItem from "./ChatItem";
+import * as React from 'react';
+import ChatItem from './ChatItem';
 
-const ChatList = ({ messages, isWidget = false, onDeleteMessage, onReplyToMessage }) => {
+const ChatList = ({
+  messages,
+  isWidget = false,
+  onDeleteMessage,
+  onReplyToMessage,
+}) => {
   const chatListRef = React.useRef(null);
   const [hasScrolledUp, setHasScrolledUp] = React.useState(false);
-  const [chatListHeight, setChatListHeight] = React.useState("500px");
+  const [chatListHeight, setChatListHeight] = React.useState('500px');
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +27,12 @@ const ChatList = ({ messages, isWidget = false, onDeleteMessage, onReplyToMessag
       }
     };
 
-    chatListRef.current?.addEventListener("scroll", handleScroll);
+    chatListRef.current?.addEventListener('scroll', handleScroll);
 
     const currentChatListRef = chatListRef.current;
 
     return () => {
-      currentChatListRef?.removeEventListener("scroll", handleScroll);
+      currentChatListRef?.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -41,37 +46,38 @@ const ChatList = ({ messages, isWidget = false, onDeleteMessage, onReplyToMessag
     const handleScroll = () => {
       if (chatListRef.current) {
         const isScrolledToBottom =
-          chatListRef.current.scrollHeight - chatListRef.current.clientHeight <= chatListRef.current.scrollTop + 5
+          chatListRef.current.scrollHeight - chatListRef.current.clientHeight <=
+          chatListRef.current.scrollTop + 5;
 
         if (isScrolledToBottom) {
-          setHasScrolledUp(false)
+          setHasScrolledUp(false);
         } else {
-          setHasScrolledUp(true)
+          setHasScrolledUp(true);
         }
       }
-    }
+    };
 
-    chatListRef.current?.addEventListener('scroll', handleScroll)
+    chatListRef.current?.addEventListener('scroll', handleScroll);
 
-    const currentChatListRef = chatListRef.current
+    const currentChatListRef = chatListRef.current;
 
     return () => {
-      currentChatListRef?.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+      currentChatListRef?.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   React.useEffect(() => {
     const handleResize = () => {
-      const newHeight = isWidget ? "500px" : `${window.innerHeight - 360}px`;
+      const newHeight = isWidget ? '500px' : `${window.innerHeight - 360}px`;
       setChatListHeight(newHeight);
     };
 
     handleResize();
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, [isWidget]);
 
@@ -82,10 +88,10 @@ const ChatList = ({ messages, isWidget = false, onDeleteMessage, onReplyToMessag
   };
 
   return (
-    <div className="rounded-lg">
+    <div className='rounded-lg'>
       <div
         ref={chatListRef}
-        className="space-y-5 overflow-y-auto pb-4 no-scrollbar scroll-smooth"
+        className='no-scrollbar space-y-5 overflow-y-auto scroll-smooth pb-4'
         style={{ height: chatListHeight }}
       >
         {messages?.map((chat, index) => (

@@ -6,7 +6,8 @@ import Blog from '@/modules/blogPage';
 import BackButton from '@/common/components/elements/BackButton';
 
 const PAGE_TITLE = 'Blog';
-const PAGE_DESCRIPTION = "Exploring the world of code, creativity, and constant learning.";
+const PAGE_DESCRIPTION =
+  'Exploring the world of code, creativity, and constant learning.';
 
 export async function getServerSideProps() {
   const blogs = await FetchBlogs();

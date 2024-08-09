@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 import Navbar from '../partials/navbar';
 import Header from '../partials/header';
 
@@ -11,9 +11,7 @@ const LayoutWithoutSidebar = ({ children }) => {
           <Navbar />
           <Header />
         </header>
-        <main className='main'>
-          {children}
-        </main>
+        <main className='main'>{children}</main>
       </div>
     </>
   );

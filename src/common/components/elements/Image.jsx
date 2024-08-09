@@ -1,37 +1,37 @@
-import * as React from "react";
-import NextImage from "next/image";
-import clsx from "clsx";
+import * as React from 'react';
+import NextImage from 'next/image';
+import clsx from 'clsx';
 
-const Image = props => {
-  const { alt, src, className, rounded, ...rest } = props
-  const [isLoading, setLoading] = React.useState(true)
+const Image = (props) => {
+  const { alt, src, className, rounded, ...rest } = props;
+  const [isLoading, setLoading] = React.useState(true);
 
   return (
     <div
       className={clsx(
-        "overflow-hidden",
-        isLoading ? "animate-pulse" : "",
-        rounded
+        'overflow-hidden',
+        isLoading ? 'animate-pulse' : '',
+        rounded,
       )}
     >
       <NextImage
-        data-testid="image"
+        data-testid='image'
         className={clsx(
-          "duration-700 ease-in-out",
+          'duration-700 ease-in-out',
           isLoading
-            ? "scale-[1.02] blur-xl grayscale"
-            : "scale-100 blur-0 grayscale-0",
+            ? 'scale-[1.02] blur-xl grayscale'
+            : 'scale-100 blur-0 grayscale-0',
           rounded,
-          className
+          className,
         )}
         src={src}
         alt={alt}
-        loading="lazy"
+        loading='lazy'
         quality={100}
         onLoad={() => setLoading(false)}
         {...rest}
       />
     </div>
-  )
-}
-export default Image
+  );
+};
+export default Image;

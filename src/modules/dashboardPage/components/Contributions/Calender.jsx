@@ -1,6 +1,6 @@
-import clsx from "clsx"
-import { motion } from "framer-motion"
-import { useState } from "react"
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const Calendar = ({ data }) => {
   const [selectContribution, setSelectContribution] = useState({
@@ -13,14 +13,14 @@ const Calendar = ({ data }) => {
     data?.months?.map((month) => {
       const filterContributionDay = weeks
         .filter(
-          (week) => week.firstDay.slice(0, 7) === month.firstDay.slice(0, 7)
+          (week) => week.firstDay.slice(0, 7) === month.firstDay.slice(0, 7),
         )
         .map((item) => item.contributionDays)
         .flat(1);
       const getContributionsByMonth = filterContributionDay.reduce(
         (previousValue, currentValue) =>
           previousValue + currentValue.contributionCount,
-        0
+        0,
       );
 
       return {
@@ -48,12 +48,12 @@ const Calendar = ({ data }) => {
 
   return (
     <>
-      <div className="relative flex flex-col">
-        <ul className="flex justify-end gap-[3px] overflow-hidden text-xs dark:text-zinc-400 md:justify-start">
+      <div className='relative flex flex-col'>
+        <ul className='flex justify-end gap-[3px] overflow-hidden text-xs dark:text-zinc-400 md:justify-start'>
           {months.map((month) => (
             <li
               key={month.firstDay}
-              className={clsx(`${month.totalWeeks < 2 ? "invisible" : ""}`)}
+              className={clsx(`${month.totalWeeks < 2 ? 'invisible' : ''}`)}
               style={{ minWidth: 15 * month.totalWeeks }}
             >
               {month.name}
@@ -61,7 +61,7 @@ const Calendar = ({ data }) => {
           ))}
         </ul>
 
-        <div className="flex justify-start gap-[3px] overflow-hidden">
+        <div className='flex justify-start gap-[3px] overflow-hidden'>
           {weeks?.map((week) => (
             <div key={week.firstDay}>
               {week.contributionDays.map((contribution) => {
@@ -70,7 +70,7 @@ const Calendar = ({ data }) => {
                   CUSTOM_CONTRIBUTION_COLORS[
                     Math.min(
                       contribution.contributionCount,
-                      CUSTOM_CONTRIBUTION_COLORS.length - 1
+                      CUSTOM_CONTRIBUTION_COLORS.length - 1,
                     )
                   ];
 
@@ -80,8 +80,8 @@ const Calendar = ({ data }) => {
                 return (
                   <motion.span
                     key={contribution.date}
-                    initial="initial"
-                    animate="animate"
+                    initial='initial'
+                    animate='animate'
                     variants={{
                       initial: { opacity: 0, translateY: -20 },
                       animate: {
@@ -90,7 +90,7 @@ const Calendar = ({ data }) => {
                         transition: { delay: getRandomDelayAnimate },
                       },
                     }}
-                    className="my-[2px] block h-[13px] w-[13px] rounded-[3px] bg-zinc-300 dark:bg-zinc-800"
+                    className='my-[2px] block h-[13px] w-[13px] rounded-[3px] bg-zinc-300 dark:bg-zinc-800'
                     style={backgroundColor ? { backgroundColor } : undefined}
                     onMouseEnter={() =>
                       setSelectContribution({
@@ -109,16 +109,16 @@ const Calendar = ({ data }) => {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2 text-sm">
-          <span className="dark:text-zinc-400">Less</span>
-          <ul className="flex gap-1">
-            <motion.li className="h-[10px] w-[10px] rounded-sm bg-zinc-300 dark:bg-zinc-800" />
+      <div className='flex flex-wrap items-center justify-between gap-2'>
+        <div className='flex items-center gap-2 text-sm'>
+          <span className='dark:text-zinc-400'>Less</span>
+          <ul className='flex gap-1'>
+            <motion.li className='h-[10px] w-[10px] rounded-sm bg-zinc-300 dark:bg-zinc-800' />
             {contributionColors.map((item, index) => (
               <motion.li
                 key={item}
-                initial="initial"
-                animate="animate"
+                initial='initial'
+                animate='animate'
                 variants={{
                   initial: { opacity: 0 },
                   animate: {
@@ -126,7 +126,7 @@ const Calendar = ({ data }) => {
                     transition: { delay: index * 0.3 },
                   },
                 }}
-                className="h-[10px] w-[10px] rounded-sm"
+                className='h-[10px] w-[10px] rounded-sm'
                 style={{ backgroundColor: item }}
               />
             ))}
@@ -136,16 +136,16 @@ const Calendar = ({ data }) => {
 
         <div
           className={clsx(
-            `${selectContribution?.date ? "opacity-100" : "opacity-0"}`,
-            "rounded bg-zinc-200 px-2 text-sm dark:bg-zinc-800"
+            `${selectContribution?.date ? 'opacity-100' : 'opacity-0'}`,
+            'rounded bg-zinc-200 px-2 text-sm dark:bg-zinc-800',
           )}
         >
-          {selectContribution?.count} contributions on{" "}
+          {selectContribution?.count} contributions on{' '}
           {selectContribution?.date}
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Calendar
+export default Calendar;

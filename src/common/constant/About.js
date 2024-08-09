@@ -14,4 +14,4 @@ export const ABOUT = `
 <p>
     Thank you for visiting, and I look forward to connecting with you!
 </p>
-`
+`;

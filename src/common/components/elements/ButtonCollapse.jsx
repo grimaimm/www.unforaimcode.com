@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styled from "@emotion/styled"
-import clsx from "clsx"
+import styled from '@emotion/styled';
+import clsx from 'clsx';
 
 export const ButtonCollapse = ({ toggleOpen, className }) => {
   const [isClosed, setIsClosed] = React.useState(false);
@@ -12,21 +12,25 @@ export const ButtonCollapse = ({ toggleOpen, className }) => {
 
   return (
     <div>
-      <button id="buttonToggleCollapse" aria-label="buttonToggleCollapse" onClick={handleClick} className={`buttonToggleCollapse h-[2.07rem] ${className}`}>
+      <button
+        id='buttonToggleCollapse'
+        aria-label='buttonToggleCollapse'
+        onClick={handleClick}
+        className={`buttonToggleCollapse h-[2.07rem] ${className}`}
+      >
         <span className={`burger-5 ${isClosed ? 'is-closed' : ''}`}>
-          <svg className='text-[#0f0f0f] dark:text-zinc-50' viewBox="0 0 32 32">
+          <svg className='text-[#0f0f0f] dark:text-zinc-50' viewBox='0 0 32 32'>
             <path
-              className="line line-top-bottom"
-              d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+              className='line line-top-bottom'
+              d='M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22'
             ></path>
-            <path className="line" d="M7 16 27 16"></path>
+            <path className='line' d='M7 16 27 16'></path>
           </svg>
         </span>
       </button>
     </div>
   );
 };
-
 
 export const MobileMenuButton = ({ toggleOpen }) => {
   const [isClosed, setIsClosed] = React.useState(false);
@@ -36,22 +40,19 @@ export const MobileMenuButton = ({ toggleOpen }) => {
     toggleOpen();
   };
 
-  const menuSpanData = [{ index: 1 }, { index: 2 }, { index: 3 }]
+  const menuSpanData = [{ index: 1 }, { index: 2 }, { index: 3 }];
 
   return (
-    <StyledMenu className="flex lg:hidden" onClick={handleClick}>
-      {menuSpanData.map(item => (
+    <StyledMenu className='flex lg:hidden' onClick={handleClick}>
+      {menuSpanData.map((item) => (
         <StyledMenuSpan
           key={item.index}
-          className={clsx(
-            "bg-zinc-950 dark:bg-zinc-100 ",
-            isClosed && "active"
-          )}
+          className={clsx('bg-zinc-950 dark:bg-zinc-100', isClosed && 'active')}
         />
       ))}
     </StyledMenu>
-  )
-}
+  );
+};
 
 const StyledMenu = styled.div`
   display: flex;
@@ -60,7 +61,7 @@ const StyledMenu = styled.div`
   height: 21px;
   width: 26px;
   cursor: pointer;
-`
+`;
 
 const StyledMenuSpan = styled.span`
   width: 100%;
@@ -81,4 +82,4 @@ const StyledMenuSpan = styled.span`
   &.active:nth-of-type(3) {
     transform: rotate(-45deg);
   }
-`
+`;

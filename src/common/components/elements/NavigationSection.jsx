@@ -1,5 +1,5 @@
-import * as React from "react";
-import ButtonNavigation from "./ButtonNavigation";
+import * as React from 'react';
+import ButtonNavigation from './ButtonNavigation';
 
 const NavigationSection = React.memo(
   ({
@@ -8,31 +8,31 @@ const NavigationSection = React.memo(
     handleNext,
     handlePrevious,
     previousTitle,
-    nextTitle
+    nextTitle,
   }) => {
     return (
-      <div className="mt-8 flex justify-between border-t border-zinc-300 py-5 dark:border-zinc-700">
+      <div className='mt-8 flex justify-between border-t border-zinc-300 py-5 dark:border-zinc-700'>
         {previousTitle && currentIndex !== 0 && (
           <ButtonNavigation
             onClick={handlePrevious}
-            action="previous"
+            action='previous'
             title={previousTitle}
           />
         )}
-        <div className="flex-grow"></div>
+        <div className='flex-grow'></div>
         {nextTitle && currentIndex !== totalItems - 1 && (
           <ButtonNavigation
             onClick={handleNext}
-            action="next"
+            action='next'
             title={nextTitle}
           />
         )}
       </div>
     );
-  }
+  },
 );
 
 // Explicitly set the display name
-NavigationSection.displayName = "NavigationSection";
+NavigationSection.displayName = 'NavigationSection';
 
 export default NavigationSection;

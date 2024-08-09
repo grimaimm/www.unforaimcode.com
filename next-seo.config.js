@@ -1,8 +1,10 @@
 const canonicalUrl = 'htts://unforaimcode.vercel.app';
-const metaImage = 'https://res.cloudinary.com/aiiimmmm/image/upload/v1722931611/metaImage-unforaimcode_o8qyur.png';
+const metaImage =
+  'https://res.cloudinary.com/aiiimmmm/image/upload/v1722931611/metaImage-unforaimcode_o8qyur.png';
 const metaDescription =
   'Experienced Web Developer skilled in ReactJS, TailwindCSS, JavaScript, and proficient in Flask and Python.';
-const metaKeywords = 'unforaimcode, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python';
+const metaKeywords =
+  'unforaimcode, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python';
 
 const defaultSEOConfig = {
   defaultTitle: 'Muhammad Rahim - Personal Website',

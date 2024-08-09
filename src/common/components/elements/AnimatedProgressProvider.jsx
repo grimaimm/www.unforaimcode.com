@@ -1,27 +1,27 @@
-import * as React from "react";
-import { Animate } from "react-move";
+import * as React from 'react';
+import { Animate } from 'react-move';
 
 class AnimatedProgressProvider extends React.Component {
   interval = undefined;
 
   state = {
-    isAnimated: false
+    isAnimated: false,
   };
 
   static defaultProps = {
-    valueStart: 0
+    valueStart: 0,
   };
 
   componentDidMount() {
     if (this.props.repeat) {
       this.interval = window.setInterval(() => {
         this.setState({
-          isAnimated: !this.state.isAnimated
+          isAnimated: !this.state.isAnimated,
         });
       }, this.props.duration * 1000);
     } else {
       this.setState({
-        isAnimated: !this.state.isAnimated
+        isAnimated: !this.state.isAnimated,
       });
     }
   }
@@ -34,16 +34,16 @@ class AnimatedProgressProvider extends React.Component {
     return (
       <Animate
         start={() => ({
-          value: this.props.valueStart
+          value: this.props.valueStart,
         })}
         update={() => ({
           value: [
-            this.state.isAnimated ? this.props.valueEnd : this.props.valueStart
+            this.state.isAnimated ? this.props.valueEnd : this.props.valueStart,
           ],
           timing: {
             duration: this.props.duration * 1000,
-            ease: this.props.easingFunction
-          }
+            ease: this.props.easingFunction,
+          },
         })}
       >
         {({ value }) => this.props.children(value)}

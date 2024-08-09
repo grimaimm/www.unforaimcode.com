@@ -1,9 +1,19 @@
 // pages/api/blog.js
-import { collection, getDocs, query, where, doc, updateDoc, getDoc, increment, orderBy } from 'firebase/firestore';
-import { db } from "@/common/libs/firebase";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  doc,
+  updateDoc,
+  getDoc,
+  increment,
+  orderBy,
+} from 'firebase/firestore';
+import { db } from '@/common/libs/firebase';
 
 const convertTimestamps = (blogs) =>
-  blogs.map(blog => ({
+  blogs.map((blog) => ({
     ...blog,
     published: blog.published?.toDate().toISOString(),
   }));
@@ -30,10 +40,13 @@ export const FetchBlogs = async () => {
   try {
     const BlogsCollection = query(
       collection(db, 'Blogs'),
-      orderBy('published', 'desc')
+      orderBy('published', 'desc'),
     );
     const BlogsSnapshot = await getDocs(BlogsCollection);
-    const BlogtList = BlogsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    const BlogtList = BlogsSnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
     return convertTimestamps(BlogtList); // Konversi timestamps
   } catch (error) {
     console.error('Error fetching blogs:', error);
@@ -41,14 +54,13 @@ export const FetchBlogs = async () => {
   }
 };
 
-
 // Fungsi untuk mengambil Blog berdasarkan slug
 export const FetchBlogBySlug = async (slug) => {
   try {
     const q = query(collection(db, 'Blogs'), where('slug', '==', slug));
     const querySnapshot = await getDocs(q);
 
-    return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   } catch (error) {
     console.error('Error fetching Blog by slug:', error);
     return [];

@@ -1,22 +1,22 @@
-import { getGithubUser } from "@/services/github"
+import { getGithubUser } from '@/services/github';
 
 export default async function handler(req, res) {
-  const queryParams = req.query
+  const queryParams = req.query;
 
-  let type = ""
+  let type = '';
 
-  if (typeof queryParams.type === "string") {
-    type = queryParams.type
+  if (typeof queryParams.type === 'string') {
+    type = queryParams.type;
   } else if (Array.isArray(queryParams.type)) {
-    type = queryParams.type[0]
+    type = queryParams.type[0];
   }
 
-  const response = await getGithubUser(type)
+  const response = await getGithubUser(type);
 
   res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=60, stale-while-revalidate=30"
-  )
+    'Cache-Control',
+    'public, s-maxage=60, stale-while-revalidate=30',
+  );
 
-  return res.status(response.status).json(response.data)
+  return res.status(response.status).json(response.data);
 }

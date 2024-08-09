@@ -1,78 +1,81 @@
-import clsx from "clsx"
+import clsx from 'clsx';
 
-import Progress from "./Progress"
+import Progress from './Progress';
 
 const sumTotalFromArray = (data, key) => {
   return (
     data.reduce(
       (previousValue, currentValue) => previousValue + currentValue[key],
-      0
+      0,
     ) ?? 0
-  )
-}
+  );
+};
 
 const CodingActiveList = ({ data }) => {
   const getLanguagesTotalHours = sumTotalFromArray(
     data?.languages || [],
-    "hours"
-  )
+    'hours',
+  );
   const getLanguagesTotalMinutes = sumTotalFromArray(
     data?.languages || [],
-    "minutes"
-  )
-  const getLanguagesTotalTimeDisplay = `${Math.floor(
-    (getLanguagesTotalMinutes % 3600) / 60
-  ) + getLanguagesTotalHours} hrs ${getLanguagesTotalMinutes} mins`
+    'minutes',
+  );
+  const getLanguagesTotalTimeDisplay = `${
+    Math.floor((getLanguagesTotalMinutes % 3600) / 60) + getLanguagesTotalHours
+  } hrs ${getLanguagesTotalMinutes} mins`;
 
-  const getEditorTotalHours = sumTotalFromArray(data?.categories || [], "hours")
+  const getEditorTotalHours = sumTotalFromArray(
+    data?.categories || [],
+    'hours',
+  );
   const getEditorTotalMinutes = sumTotalFromArray(
     data?.categories || [],
-    "minutes"
-  )
-  const getEditorTotalTimeDisplay = `${Math.floor(
-    (getEditorTotalMinutes % 3600) / 60
-  ) + getEditorTotalHours} hrs ${getEditorTotalMinutes} mins`
+    'minutes',
+  );
+  const getEditorTotalTimeDisplay = `${
+    Math.floor((getEditorTotalMinutes % 3600) / 60) + getEditorTotalHours
+  } hrs ${getEditorTotalMinutes} mins`;
 
   const actives = [
     {
-      title: "Languages",
+      title: 'Languages',
       total: getLanguagesTotalTimeDisplay,
       data: data?.languages,
       styles: {
-        bg: "bg-gradient-to-r from-indigo-400 to-purple-400"
-      }
+        bg: 'bg-gradient-to-r from-indigo-400 to-purple-400',
+      },
     },
     {
-      title: "Categories",
+      title: 'Categories',
       total: getEditorTotalTimeDisplay,
       data: data?.categories,
       styles: {
-        bg: "bg-gradient-to-r from-indigo-400 to-purple-400"
-      }
-    }
-  ]
+        bg: 'bg-gradient-to-r from-indigo-400 to-purple-400',
+      },
+    },
+  ];
 
   if (!data) {
-    return null
+    return null;
   }
 
   return (
-    <div className="mt-2 flex flex-col gap-6 sm:flex-row sm:gap-4">
-      {actives.map(item => (
+    <div className='mt-2 flex flex-col gap-6 sm:flex-row sm:gap-4'>
+      {actives.map((item) => (
         <div
           key={item?.title}
           className={clsx(
             item?.styles?.bg,
-            "relative flex flex-1 flex-col gap-2 rounded-lg p-[2px]"
+            'relative flex flex-1 flex-col gap-2 rounded-lg p-[2px]',
           )}
         >
-          <div className="h-full w-full rounded-lg bg-zinc-50 p-2 dark:bg-zinc-950">
-            <p className="absolute -top-3 left-3 bg-zinc-50 px-2 dark:bg-zinc-950">
+          <div className='h-full w-full rounded-lg bg-zinc-50 p-2 dark:bg-zinc-950'>
+            <p className='absolute -top-3 left-3 bg-zinc-50 px-2 dark:bg-zinc-950'>
               {item?.title}
             </p>
 
-            <ul className="flex flex-col gap-1 px-4 py-3">
-              {item?.data?.map(subItem => (
+            <ul className='flex flex-col gap-1 px-4 py-3'>
+              {item?.data?.map((subItem) => (
                 <li key={subItem?.name}>
                   <Progress data={subItem} className={item?.styles?.bg} />
                 </li>
@@ -82,7 +85,7 @@ const CodingActiveList = ({ data }) => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default CodingActiveList
+export default CodingActiveList;

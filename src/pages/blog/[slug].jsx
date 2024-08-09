@@ -9,7 +9,6 @@ import fs from 'fs';
 import path from 'path';
 import { formatDate } from '@/common/utils/Date';
 
-
 const BlogSlugDetailPage = ({ blog }) => {
   if (!blog) {
     return <div>No blog found</div>;
@@ -26,8 +25,12 @@ const BlogSlugDetailPage = ({ blog }) => {
         openGraph={{
           type: 'article',
           article: {
-            publishedTime: blog?.published ? formatDate(blog.published) : 'Date not available',
-            modifiedTime: blog?.published ? formatDate(blog.published) : 'Date not available',
+            publishedTime: blog?.published
+              ? formatDate(blog.published)
+              : 'Date not available',
+            modifiedTime: blog?.published
+              ? formatDate(blog.published)
+              : 'Date not available',
             authors: ['Muhammad Rahim'],
           },
           url: canonicalUrl,
@@ -43,7 +46,7 @@ const BlogSlugDetailPage = ({ blog }) => {
         <BackButton url='/blog' />
         <BlogDetails blog={blog} />
         <ToastContainer
-          position="top-right"
+          position='top-right'
           autoClose={3000}
           hideProgressBar={false}
           newestOnTop={false}
@@ -57,7 +60,6 @@ const BlogSlugDetailPage = ({ blog }) => {
     </>
   );
 };
-
 
 export async function getServerSideProps({ params }) {
   const { slug } = params;
@@ -74,7 +76,13 @@ export async function getServerSideProps({ params }) {
 
   await UpdateBlogViews(blog.id);
 
-  const filePath = path.join(process.cwd(), 'src', 'contents', 'blog', `${slug}.md`);
+  const filePath = path.join(
+    process.cwd(),
+    'src',
+    'contents',
+    'blog',
+    `${slug}.md`,
+  );
 
   try {
     const content = fs.readFileSync(filePath, 'utf8');

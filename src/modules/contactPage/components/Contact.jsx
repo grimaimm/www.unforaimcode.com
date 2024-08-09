@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from "@/common/components/elements/Container";
+import { Container } from '@/common/components/elements/Container';
 import SocialMediaList from './SocialMediaList';
 import ContactForm from './ContactForm';
 
@@ -15,6 +15,6 @@ const Contact = () => {
       </section>
     </>
   );
-}
+};
 
 export default Contact;

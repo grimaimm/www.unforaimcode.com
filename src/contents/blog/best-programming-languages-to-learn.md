@@ -107,7 +107,6 @@ helping you stay relevant and innovative in the world of technology. Let's start
   </div>
 </div>
 
-
 > SQL
 
 <div class="space-y-3">

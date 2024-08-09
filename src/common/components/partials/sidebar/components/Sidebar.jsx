@@ -17,6 +17,6 @@ const Sidebar = () => {
       {/* <Copyright /> */}
     </SidebarLayout>
   );
-}
+};
 
 export default Sidebar;

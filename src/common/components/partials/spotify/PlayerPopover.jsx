@@ -37,12 +37,8 @@ const PlayerPopover = ({ isShow, playing }) => {
               </div>
             </div>
             <div className='flex flex-col text-[13px]'>
-              <span className='text-zinc-500 dark:text-zinc-500'>
-                Album:
-              </span>
-              <span className='text-zinc-600 dark:text-zinc-400'>
-                {album}
-              </span>
+              <span className='text-zinc-500 dark:text-zinc-500'>Album:</span>
+              <span className='text-zinc-600 dark:text-zinc-400'>{album}</span>
             </div>
           </div>
         </div>

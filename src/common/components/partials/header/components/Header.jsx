@@ -6,7 +6,10 @@ import Tooltip from '@/common/components/elements/Tooltip';
 import Image from '@/common/components/elements/Image';
 import ToggleThemeButton from '@/common/components/elements/ToggleThemeButton';
 import { useRouter } from 'next/router';
-import { MdClose as CloseIcon, MdVerified as VerifiedIcon } from 'react-icons/md';
+import {
+  MdClose as CloseIcon,
+  MdVerified as VerifiedIcon,
+} from 'react-icons/md';
 import { MENU_ITEMS } from '@/common/constant/Menu';
 import { FiMenu as MenuIcon } from 'react-icons/fi';
 import { BiCommand as CommandIcon } from 'react-icons/bi';
@@ -21,9 +24,9 @@ const Header = () => {
   return (
     <>
       <HeaderLayout>
-        <div className="flex items-center gap-3">
+        <div className='flex items-center gap-3'>
           <Image
-            src="/images/Me/profileImage.jpg"
+            src='/images/Me/profileImage.jpg'
             alt='Muhammad Rahim'
             height={48}
             width={48}
@@ -32,8 +35,8 @@ const Header = () => {
           />
           {!showMenu && (
             <div className='flex items-center gap-3'>
-              <Link href="/">
-                <h2 className="text-lg font-sora lg:font-medium font-bold admin-name dark:text-zinc-200">
+              <Link href='/'>
+                <h2 className='admin-name font-sora text-lg font-bold dark:text-zinc-200 lg:font-medium'>
                   Muhammad Rahim
                 </h2>
               </Link>
@@ -41,7 +44,7 @@ const Header = () => {
                 <VerifiedIcon
                   size={18}
                   className='text-blue-400'
-                  data-aos="flip-right"
+                  data-aos='flip-right'
                 />
               </Tooltip>
             </div>
@@ -50,7 +53,7 @@ const Header = () => {
 
         <div className='flex items-center justify-between gap-4'>
           {showMenu && (
-            <div className='flex items-center gap-4' data-aos="flip-up">
+            <div className='flex items-center gap-4' data-aos='flip-up'>
               {MENU_ITEMS.map((menu, index) => (
                 <Link
                   key={index}
@@ -58,7 +61,7 @@ const Header = () => {
                   className={clsx(
                     'text-zinc-700 hover:text-zinc-800 dark:text-zinc-400 hover:dark:text-zinc-100',
                     location === menu?.href &&
-                    '!text-zinc-800 dark:!text-zinc-100'
+                      '!text-zinc-800 dark:!text-zinc-100',
                   )}
                 >
                   <div>{menu.title}</div>
@@ -88,6 +91,6 @@ const Header = () => {
       </HeaderLayout>
     </>
   );
-}
+};
 
 export default Header;

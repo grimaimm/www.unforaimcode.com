@@ -8,7 +8,7 @@ const SimpleHeat = () => {
         text={'Lorem ipsum'}
         sx={{
           bgColor: '#ffffff',
-          barWidth: 5
+          barWidth: 5,
         }}
       />
     </div>

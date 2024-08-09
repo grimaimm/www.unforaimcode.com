@@ -1,9 +1,9 @@
-import { sendGTMEvent } from "@next/third-parties/google"
+import { sendGTMEvent } from '@next/third-parties/google';
 
-export const sendPageView = url => {
-  sendGTMEvent({ event: "page_viewed", url })
-}
+export const sendPageView = (url) => {
+  sendGTMEvent({ event: 'page_viewed', url });
+};
 
-export const sendDataLayer = data => {
-  sendGTMEvent(data)
-}
+export const sendDataLayer = (data) => {
+  sendGTMEvent(data);
+};

@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format } from 'date-fns';
 
 export const formatBlogSlug = (slug) => slug?.slice(0, -5);
 
@@ -11,7 +11,7 @@ export const groupContentByChapter = (contents) => {
     const { frontMatter } = content;
 
     const chapter_id = frontMatter.chapter_id ?? 0;
-    const chapter_title = frontMatter.chapter_title || "ungrouped";
+    const chapter_title = frontMatter.chapter_title || 'ungrouped';
 
     if (!acc[chapter_id]) {
       acc[chapter_id] = {
@@ -28,7 +28,7 @@ export const groupContentByChapter = (contents) => {
 };
 
 export const parseUrl = (url) => {
-  const parts = url.split("/");
+  const parts = url.split('/');
   return {
     parentSlug: parts[2],
     contentSlug: parts[3],
@@ -36,9 +36,9 @@ export const parseUrl = (url) => {
 };
 
 export const removeHtmlTags = (html) => {
-  if (typeof DOMParser !== "undefined") {
-    const doc = new DOMParser().parseFromString(html, "text/html");
-    return doc.body.textContent || "";
+  if (typeof DOMParser !== 'undefined') {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.textContent || '';
   } else {
     return html;
   }
@@ -51,9 +51,9 @@ export const formatExcerpt = (content, maxLength = 100) => {
     return cleanedContent;
   }
 
-  const trimmed = cleanedContent.substring(0, maxLength).replace(/\s+\S*$/, "");
+  const trimmed = cleanedContent.substring(0, maxLength).replace(/\s+\S*$/, '');
 
-  return trimmed + (cleanedContent.length > maxLength ? "..." : "");
+  return trimmed + (cleanedContent.length > maxLength ? '...' : '');
 };
 
 // export const calculateReadingTime = (content, wordsPerMinute = 200) => {
@@ -62,7 +62,6 @@ export const formatExcerpt = (content, maxLength = 100) => {
 //   const readingTimeMinutes = Math.ceil(wordCount / wordsPerMinute);
 //   return readingTimeMinutes;
 // };
-
 
 export const calculateReadingTime = (content, wordsPerMinute = 200) => {
   if (!content) {

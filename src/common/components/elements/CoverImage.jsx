@@ -1,5 +1,5 @@
 import * as React from 'react';
-import NextImage from "next/image";
+import NextImage from 'next/image';
 import clsx from 'clsx';
 import StatusAnimation from './StatusAnimation';
 import { ButtonSwitchTheme } from './ButtonSwitchTheme';
@@ -10,16 +10,20 @@ const CoverImage = ({ src, alt, className, ...rest }) => {
   return (
     <div
       className={clsx(
-        'relative w-full h-[90px] rounded-tr-xl rounded-b-xl overflow-hidden',
-        className
+        'relative h-[90px] w-full overflow-hidden rounded-b-xl rounded-tr-xl',
+        className,
       )}
     >
-      <div className={clsx(
-        'duration-700 ease-in-out',
-        isLoading ? 'animate-pulse scale-[1.02] blur-xl grayscale' : 'scale-100 blur-0 grayscale-0'
-      )}>
+      <div
+        className={clsx(
+          'duration-700 ease-in-out',
+          isLoading
+            ? 'scale-[1.02] animate-pulse blur-xl grayscale'
+            : 'scale-100 blur-0 grayscale-0',
+        )}
+      >
         <NextImage
-          className="w-full h-full object-cover"
+          className='h-full w-full object-cover'
           src={src}
           alt={alt}
           width={100}
@@ -28,12 +32,12 @@ const CoverImage = ({ src, alt, className, ...rest }) => {
           onLoad={() => setLoading(false)}
           {...rest}
         />
-        <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden dark:bg-zinc-950 bg-fixed opacity-60"></div>
+        <div className='absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed opacity-60 dark:bg-zinc-950'></div>
       </div>
-      <div className="absolute top-0 left-0 bg-zinc-50 dark:bg-zinc-950 pb-1.5 pr-1.5 rounded-br-xl cover-rounded dark:cover-rounded-dark">
+      <div className='cover-rounded dark:cover-rounded-dark absolute left-0 top-0 rounded-br-xl bg-zinc-50 pb-1.5 pr-1.5 dark:bg-zinc-950'>
         <StatusAnimation />
       </div>
-      <div className="absolute right-0 bottom-0 py-1.5 px-1.5">
+      <div className='absolute bottom-0 right-0 px-1.5 py-1.5'>
         <div className='relative flex items-center'>
           <ButtonSwitchTheme />
         </div>

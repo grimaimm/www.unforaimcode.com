@@ -1,23 +1,22 @@
-import { getALLTimeSinceToday, getReadStats } from "@/services/wakatime"
-
+import { getALLTimeSinceToday, getReadStats } from '@/services/wakatime';
 
 export default async function handler(req, res) {
   try {
-    const readStatsResponse = await getReadStats()
-    const allTimeSinceTodayResponse = await getALLTimeSinceToday()
+    const readStatsResponse = await getReadStats();
+    const allTimeSinceTodayResponse = await getALLTimeSinceToday();
 
     res.setHeader(
-      "Cache-Control",
-      "public, s-maxage=60, stale-while-revalidate=30"
-    )
+      'Cache-Control',
+      'public, s-maxage=60, stale-while-revalidate=30',
+    );
 
     const data = {
       ...readStatsResponse.data,
-      all_time_since_today: allTimeSinceTodayResponse.data
-    }
+      all_time_since_today: allTimeSinceTodayResponse.data,
+    };
 
-    res.status(200).json(data)
+    res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ message: "Internal Server Error" })
+    res.status(500).json({ message: 'Internal Server Error' });
   }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { HiOutlineSpeakerphone as CoomingSoonIcon } from "react-icons/hi";
+import { HiOutlineSpeakerphone as CoomingSoonIcon } from 'react-icons/hi';
 
 // Render the component with the message and the "Coming Soon" icon.
 export default function CommingSoonState({ message }) {

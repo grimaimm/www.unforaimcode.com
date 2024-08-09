@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 
 const API_KEY = process.env.WAKATIME_API_KEY;
 
-const STATS_ENDPOINT = "https://wakatime.com/api/v1/users/current/stats";
+const STATS_ENDPOINT = 'https://wakatime.com/api/v1/users/current/stats';
 const ALL_TIME_SINCE_TODAY =
-  "https://wakatime.com/api/v1/users/current/all_time_since_today";
+  'https://wakatime.com/api/v1/users/current/all_time_since_today';
 
 export const getReadStats = async () => {
   const response = await axios.get(`${STATS_ENDPOINT}/last_7_days`, {

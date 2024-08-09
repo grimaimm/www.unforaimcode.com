@@ -1,15 +1,15 @@
-// src/modules/chatroomPage/components/Chat.jsx 
+// src/modules/chatroomPage/components/Chat.jsx
 /* eslint-disable react-hooks/exhaustive-deps */
-import * as React from "react";
-import { getDatabase, onValue, ref, remove, set } from "firebase/database";
-import { useSession } from "next-auth/react";
-import { v4 as uuidv4 } from "uuid";
+import * as React from 'react';
+import { getDatabase, onValue, ref, remove, set } from 'firebase/database';
+import { useSession } from 'next-auth/react';
+import { v4 as uuidv4 } from 'uuid';
 
-import { firebaseApp } from "@/common/libs/realtime-firebase";
-import ChatAuth from "./ChatAuth";
-import ChatInput from "./ChatInput";
-import ChatList from "./ChatList";
-import { useNotif } from "@/common/hooks/useNotif";
+import { firebaseApp } from '@/common/libs/realtime-firebase';
+import ChatAuth from './ChatAuth';
+import ChatInput from './ChatInput';
+import ChatList from './ChatList';
+import { useNotif } from '@/common/hooks/useNotif';
 
 const Chat = ({ isWidget = false }) => {
   const { data: session } = useSession();
@@ -25,7 +25,7 @@ const Chat = ({ isWidget = false }) => {
       notif('Please sign in to reply'); // Show notification if user is not signed in
       return;
     }
-    
+
     const messageId = uuidv4();
     const messageRef = ref(database, `${databaseChat}/${messageId}`);
 
@@ -39,11 +39,11 @@ const Chat = ({ isWidget = false }) => {
         created_at: new Date().toISOString(),
         is_show: true,
         is_reply: !!replyToMessage, // Add is_reply field
-        reply_to: replyToMessage ? replyToMessage.name : null // Add reply_to field
+        reply_to: replyToMessage ? replyToMessage.name : null, // Add reply_to field
       });
     } catch (error) {
       // Handle any errors
-      console.error("Error sending message:", error);
+      console.error('Error sending message:', error);
     } finally {
       setReplyToMessage(null); // Reset reply after sending
     }
@@ -63,7 +63,7 @@ const Chat = ({ isWidget = false }) => {
       return;
     }
 
-    const message = messages.find(msg => msg.id === id);
+    const message = messages.find((msg) => msg.id === id);
     setReplyToMessage(message);
   };
 

@@ -9,10 +9,13 @@ import { MdLibraryBooks as LessonIcon } from 'react-icons/md';
 const LearnCard = ({ learn }) => {
   // Calculate the total number of lessons
   const totalLessons = learn.content ? learn.content.length : 0;
-  
+
   return (
-    <Link href={`/learn/${learn.slug}`} aria-label={`View learn: ${learn.title}`}>
-      <Card className='group relative w-full h-full cursor-pointer border border-zinc-200 lg:hover:scale-[102%] bg-gradient-to-b dark:border-zinc-800 dark:from-zinc-800 dark:to-zinc-950'>
+    <Link
+      href={`/learn/${learn.slug}`}
+      aria-label={`View learn: ${learn.title}`}
+    >
+      <Card className='group relative h-full w-full cursor-pointer border border-zinc-200 bg-gradient-to-b dark:border-zinc-800 dark:from-zinc-800 dark:to-zinc-950 lg:hover:scale-[102%]'>
         <div className='relative'>
           <CloudinaryImage
             publicId={learn.cloudinary}
@@ -29,7 +32,7 @@ const LearnCard = ({ learn }) => {
         <div className='flex flex-col justify-between space-y-3 p-5'>
           <div className='space-y-2'>
             <div className='flex justify-between'>
-              <div className='cursor-pointer font-medium text-lg text-zinc-700 transition-all duration-300 dark:text-zinc-300 dark:group-hover:text-indigo-400 lg:group-hover:text-indigo-600'>
+              <div className='cursor-pointer text-lg font-medium text-zinc-700 transition-all duration-300 dark:text-zinc-300 dark:group-hover:text-indigo-400 lg:group-hover:text-indigo-600'>
                 {learn.title}
               </div>
             </div>

@@ -8,7 +8,6 @@ import PageHeading from '@/common/components/elements/PageHeading';
 import ProjectDetails from '@/modules/projectPage/components/ProjectDetails';
 import path from 'path';
 
-
 const ProjectSlugDetailPage = ({ project }) => {
   const PAGE_TITLE = project?.title || 'Project not found';
   const PAGE_DESCRIPTION = project?.description || '';
@@ -24,8 +23,12 @@ const ProjectSlugDetailPage = ({ project }) => {
         openGraph={{
           type: 'article',
           article: {
-            publishedTime: project?.updated_at ? formatDate(project.updated_at) : 'Date not available',
-            modifiedTime: project?.updated_at ? formatDate(project.updated_at) : 'Date not available',
+            publishedTime: project?.updated_at
+              ? formatDate(project.updated_at)
+              : 'Date not available',
+            modifiedTime: project?.updated_at
+              ? formatDate(project.updated_at)
+              : 'Date not available',
             authors: ['Muhammad Rahim'],
           },
           url: canonicalUrl,
@@ -59,7 +62,13 @@ export async function getServerSideProps({ params }) {
     project.updated_at = project.updated_at.toDate().toISOString();
   }
 
-  const filePath = path.join(process.cwd(), 'src', 'contents', 'projects', `${slug}.mdx`);
+  const filePath = path.join(
+    process.cwd(),
+    'src',
+    'contents',
+    'projects',
+    `${slug}.mdx`,
+  );
   let mdxContent = null;
 
   try {
@@ -72,6 +81,5 @@ export async function getServerSideProps({ params }) {
   project.content = mdxContent;
   return { props: { project } };
 }
-
 
 export default ProjectSlugDetailPage;

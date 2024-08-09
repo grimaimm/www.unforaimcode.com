@@ -14,7 +14,7 @@ const Learn = ({ learns }) => {
   }
 
   return (
-    <div className='grid gap-5 lg:px-2 pt-2 pb-5 sm:grid-cols-2'>
+    <div className='grid gap-5 pb-5 pt-2 sm:grid-cols-2 lg:px-2'>
       {learns.map((learn, index) => (
         <motion.div key={index}>
           <LearnCard learn={learn} />
@@ -22,6 +22,6 @@ const Learn = ({ learns }) => {
       ))}
     </div>
   );
-}
+};
 
 export default Learn;

@@ -8,10 +8,7 @@ const ButtonSocialMedia = ({
   ...rest
 }) => {
   return (
-    <button
-      className={`Button-Social-Media ${className}`}
-      {...rest}
-    >
+    <button className={`Button-Social-Media ${className}`} {...rest}>
       {isLoading ? (
         <>Loading...</>
       ) : (

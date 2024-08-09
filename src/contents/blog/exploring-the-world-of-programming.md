@@ -36,6 +36,7 @@ and offer some useful tips for beginners looking to get started.
 ```bash
 01001000  01100101  01101100  01101100  01101111
 ```
+
   </li>
   <li>
     <p className="font-medium">Assembly Language (ASM)</p>
@@ -45,17 +46,18 @@ and offer some useful tips for beginners looking to get started.
     <p className="font-medium">Assembly Language Examples:</p>
 
 ```bash
-org  0x100       
+org  0x100
 
-mov  dx, msg     
-mov  ah, 9       
-int  0x21        
+mov  dx, msg
+mov  ah, 9
+int  0x21
 
-mov  ah, 0x4c    
-int  0x21        
+mov  ah, 0x4c
+int  0x21
 
-msg  db 'Hello', 0x0d, 0x0a, '$' 
+msg  db 'Hello', 0x0d, 0x0a, '$'
 ```
+
   </li>
 
   <li>
@@ -73,6 +75,7 @@ int main() {
   return 0;
 }
 ```
+
   </li>
 
   <li>
@@ -83,8 +86,9 @@ int main() {
   <p className="font-medium">High-Level Language Examples:</p>
 
 ```js
-console.log("Hello World")
+console.log('Hello World');
 ```
+
   </li>
 </ol>
 <p>

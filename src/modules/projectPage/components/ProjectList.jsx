@@ -19,7 +19,7 @@ const ProjectList = ({ projects, loadMore, hasMore }) => {
   const [filteredProjects, setFilteredProjects] = useState([]);
 
   useEffect(() => {
-    setFilteredProjects(projects.filter(project => project.is_show));
+    setFilteredProjects(projects.filter((project) => project.is_show));
   }, [projects]);
 
   if (filteredProjects.length === 0) {
@@ -33,7 +33,7 @@ const ProjectList = ({ projects, loadMore, hasMore }) => {
       loader={<h4>Loading...</h4>}
       style={{ overflow: 'hidden' }}
     >
-      <div className='grid gap-5 lg:px-2 pt-2 pb-5 sm:grid-cols-2'>
+      <div className='grid gap-5 pb-5 pt-2 sm:grid-cols-2 lg:px-2'>
         {filteredProjects.map((project, index) => (
           <motion.div
             key={project.id || index}
@@ -47,6 +47,6 @@ const ProjectList = ({ projects, loadMore, hasMore }) => {
       </div>
     </InfiniteScroll>
   );
-}
+};
 
 export default ProjectList;

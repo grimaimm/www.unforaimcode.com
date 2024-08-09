@@ -5,7 +5,7 @@ const useLoading = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const router = useRouter();
 
-  React. useEffect(() => {
+  React.useEffect(() => {
     if (router.isReady) {
       setIsLoading(false);
     }

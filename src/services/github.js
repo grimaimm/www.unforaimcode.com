@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 
-import { GITHUB_ACCOUNTS } from "@/common/constant/Github";
+import { GITHUB_ACCOUNTS } from '@/common/constant/Github';
 
-const GITHUB_USER_ENDPOINT = "https://api.github.com/graphql";
+const GITHUB_USER_ENDPOINT = 'https://api.github.com/graphql';
 
 const GITHUB_USER_QUERY = `query($username: String!) {
   user(login: $username) {
@@ -42,7 +42,7 @@ export const fetchGithubData = async (username, token) => {
         headers: {
           Authorization: `bearer ${token}`,
         },
-      }
+      },
     );
 
     const status = response.status;
@@ -54,18 +54,18 @@ export const fetchGithubData = async (username, token) => {
 
     return { status, data: responseJson.data.user };
   } catch (error) {
-    console.error("Error fetching GitHub data:", error);
+    console.error('Error fetching GitHub data:', error);
     return { status: 500, data: {} };
   }
 };
 
 export const getGithubUser = async (type) => {
   const account = GITHUB_ACCOUNTS.find(
-    (account) => account?.type === type && account?.is_active
+    (account) => account?.type === type && account?.is_active,
   );
 
   if (!account) {
-    throw new Error("Invalid user type");
+    throw new Error('Invalid user type');
   }
 
   const { username, token } = account;

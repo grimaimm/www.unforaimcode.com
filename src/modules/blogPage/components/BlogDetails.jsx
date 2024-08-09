@@ -6,22 +6,25 @@ import CloudinaryImage from '@/common/components/elements/CloudinaryImage';
 import MDBlogContent from './MDBlogContent';
 import Card from '@/common/components/elements/Card';
 import Button from '@/common/components/elements/Button';
-import { AiOutlineLike as Like } from "react-icons/ai";
-import { AiOutlineDislike as Dislike } from "react-icons/ai";
-import { PiSmileySad as Sad } from "react-icons/pi";
-import { HiOutlineShare as Share } from "react-icons/hi";
+import { AiOutlineLike as Like } from 'react-icons/ai';
+import { AiOutlineDislike as Dislike } from 'react-icons/ai';
+import { PiSmileySad as Sad } from 'react-icons/pi';
+import { HiOutlineShare as Share } from 'react-icons/hi';
 import { toast } from 'react-toastify';
 
 const BlogDetails = ({ blog }) => {
   const readingTimeMinutes = calculateReadingTime(blog.content);
 
   // Extract headings for TableOfContents
-  const headings = blog.content.split('\n').map((line, index) => {
-    if (line.startsWith('> ')) {
-      return { id: `blockquote-${index + 1}`, text: line.slice(2) };
-    }
-    return null;
-  }).filter(Boolean);
+  const headings = blog.content
+    .split('\n')
+    .map((line, index) => {
+      if (line.startsWith('> ')) {
+        return { id: `blockquote-${index + 1}`, text: line.slice(2) };
+      }
+      return null;
+    })
+    .filter(Boolean);
 
   const [activeSection, setActiveSection] = useState(null);
   const [likes, setLikes] = useState(blog.likes || 0);
@@ -92,11 +95,12 @@ const BlogDetails = ({ blog }) => {
 
   const handleShare = () => {
     if (navigator.share) {
-      navigator.share({
-        title: blog.title,
-        text: 'Check out this blog post!',
-        url: window.location.href,
-      })
+      navigator
+        .share({
+          title: blog.title,
+          text: 'Check out this blog post!',
+          url: window.location.href,
+        })
         .then(() => console.log('Successful share'))
         .catch((error) => {
           console.error('Error sharing:', error);
@@ -105,7 +109,8 @@ const BlogDetails = ({ blog }) => {
           });
         });
     } else {
-      navigator.clipboard.writeText(window.location.href)
+      navigator.clipboard
+        .writeText(window.location.href)
         .then(() => {
           toast.success('Link copied to clipboard!', {
             className: 'custom-toast-success dark:custom-toast-success-dark',
@@ -133,9 +138,9 @@ const BlogDetails = ({ blog }) => {
         alt={blog.title}
         width={1200}
         height={(1200 * 2) / 4.9}
-        className="rounded-xl max-sm:h-[176px]"
+        className='rounded-xl max-sm:h-[176px]'
       />
-      <section className='lg:grid lg:grid-cols-[auto,250px] lg:gap-8 md:mt-6 mt-6'>
+      <section className='mt-6 md:mt-6 lg:grid lg:grid-cols-[auto,250px] lg:gap-8'>
         <main>
           <div className='space-y-6 leading-[1.8] dark:text-zinc-300'>
             <MDBlogContent content={blog.content} />
@@ -154,16 +159,18 @@ const BlogDetails = ({ blog }) => {
               ))}
             </div>
           </div>
-          <Card className="border border-zinc-200 bg-gradient-to-br from-white to-zinc-100 p-4 dark:border-zinc-700 dark:from-zinc-800 dark:to-zinc-900/50">
-            <div className="flex items-center space-x-2">
+          <Card className='border border-zinc-200 bg-gradient-to-br from-white to-zinc-100 p-4 dark:border-zinc-700 dark:from-zinc-800 dark:to-zinc-900/50'>
+            <div className='flex items-center space-x-2'>
               <h3>Enjoyed the Blog?</h3>
             </div>
-            <p className="mt-2 mb-4 text-sm text-zinc-600 dark:text-zinc-400">
-              If you found this blog post valuable, please consider sharing it with others who might enjoy it. We appreciate your feedback and support!
+            <p className='mb-4 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
+              If you found this blog post valuable, please consider sharing it
+              with others who might enjoy it. We appreciate your feedback and
+              support!
             </p>
-            <div className='flex gap-2 flex-row relative'>
+            <div className='relative flex flex-row gap-2'>
               <Button
-                className='px-4 py-2 text-sm relative'
+                className='relative px-4 py-2 text-sm'
                 data-umami-event='Click Contact Button'
                 onClick={handleLike}
               >
@@ -183,17 +190,13 @@ const BlogDetails = ({ blog }) => {
                 </span>
               </Button>
               <button
-                type="button"
+                type='button'
                 data-umami-event='Click Share Button'
-                className="
-                  px-4 py-2 text-sm
-                  share-button dark:text-zinc-300 text-zinc-600 
-                  border dark:border-zinc-600 border-zinc-300
-                  dark:bg-zinc-800 bg-zinc-100 rounded-lg"
+                className='share-button rounded-lg border border-zinc-300 bg-zinc-100 px-4 py-2 text-sm text-zinc-600 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-300'
                 onClick={handleShare}
               >
-                <span className="button__text">Share</span>
-                <span className="button__icon bg-zinc-200 dark:bg-zinc-700">
+                <span className='button__text'>Share</span>
+                <span className='button__icon bg-zinc-200 dark:bg-zinc-700'>
                   <Share size={20} />
                 </span>
               </button>

@@ -10,8 +10,11 @@ import CloudinaryImage from '@/common/components/elements/CloudinaryImage';
 
 const ProjectCard = ({ project }) => {
   return (
-    <Link href={`/projects/${project.slug}`} aria-label={`View project: ${project.title}`}>
-      <Card className='group relative cursor-pointer border border-zinc-200 lg:hover:scale-[102%] bg-gradient-to-b dark:border-zinc-800 dark:from-zinc-800 dark:to-zinc-950'>
+    <Link
+      href={`/projects/${project.slug}`}
+      aria-label={`View project: ${project.title}`}
+    >
+      <Card className='group relative cursor-pointer border border-zinc-200 bg-gradient-to-b dark:border-zinc-800 dark:from-zinc-800 dark:to-zinc-950 lg:hover:scale-[102%]'>
         {project.is_featured && (
           <div className='absolute right-0 top-0 z-[2] flex items-center gap-1 rounded-bl-xl rounded-tr-xl bg-lime-300 px-1.5 py-0.5 text-[12px] font-medium text-emerald-950'>
             <PinIcon size={14} />
@@ -40,7 +43,7 @@ const ProjectCard = ({ project }) => {
         </div>
         <div className='space-y-2 p-5'>
           <div className='flex justify-between'>
-            <div className='cursor-pointer text-lg font-medium transition-all duration-300 text-zinc-700 dark:text-zinc-300 dark:group-hover:text-indigo-400 lg:group-hover:text-indigo-600'>
+            <div className='cursor-pointer text-lg font-medium text-zinc-700 transition-all duration-300 dark:text-zinc-300 dark:group-hover:text-indigo-400 lg:group-hover:text-indigo-600'>
               {project.title}
             </div>
           </div>
@@ -49,7 +52,7 @@ const ProjectCard = ({ project }) => {
           </p>
           <div className='flex flex-wrap items-center gap-3 pt-2'>
             {project.stack.map((stack, index) => (
-              <div key={stack || index} className="w-6">
+              <div key={stack || index} className='w-6'>
                 <Tooltip title={stack}>{STACKS[stack]}</Tooltip>
               </div>
             ))}
@@ -58,6 +61,6 @@ const ProjectCard = ({ project }) => {
       </Card>
     </Link>
   );
-}
+};
 
 export default ProjectCard;

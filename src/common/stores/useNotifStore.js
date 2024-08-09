@@ -1,9 +1,9 @@
-import { create } from "zustand"
+import { create } from 'zustand';
 
-export const useNotifStore = create()(set => ({
+export const useNotifStore = create()((set) => ({
   isOpen: false,
-  text: "",
+  text: '',
   showNotif: () => set({ isOpen: true }),
   hideNotif: () => set({ isOpen: false }),
-  setNotifText: text => set({ text })
-}))
+  setNotifText: (text) => set({ text }),
+}));

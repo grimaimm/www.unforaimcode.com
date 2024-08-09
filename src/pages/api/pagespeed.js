@@ -6,9 +6,9 @@ export const FetchPagespeed = async () => {
   try {
     const PagespeedsCollection = collection(db, 'Pagespeed');
     const PagespeedsSnapshot = await getDocs(PagespeedsCollection);
-    const PagespeedList = PagespeedsSnapshot.docs.map(doc => ({
+    const PagespeedList = PagespeedsSnapshot.docs.map((doc) => ({
       id: doc.id,
-      ...doc.data()
+      ...doc.data(),
     }));
 
     return PagespeedList;
@@ -23,6 +23,8 @@ export default async function handler(req, res) {
     const pagespeedData = await FetchPagespeed();
     res.status(200).json(pagespeedData);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch data', details: error.message });
+    res
+      .status(500)
+      .json({ error: 'Failed to fetch data', details: error.message });
   }
 }

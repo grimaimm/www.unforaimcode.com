@@ -47,7 +47,6 @@ if __name__ == '__main__':
   </ul>
 </div>
 
-
 <div class="space-y-3">
   <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Menjalankan Aplikasi dan Mengaksesnya melalui Browser</strong></h3>
   <ol className="list-decimal space-y-3 pb-2 pl-10">

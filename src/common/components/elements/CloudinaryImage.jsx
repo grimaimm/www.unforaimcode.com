@@ -75,7 +75,7 @@ export default function CloudinaryImage({
             : `${(+height / +width) * 100}%`,
           cursor: preview ? 'zoom-in' : 'default',
         }}
-        className="img-blur"
+        className='img-blur'
       >
         <style jsx>{`
           .img-blur::before {
@@ -91,22 +91,18 @@ export default function CloudinaryImage({
             opacity: ${isLoaded ? 0 : 1};
           }
         `}</style>
-        <div className="absolute left-0 top-0 w-full h-full duration-700 ease-in-out">
+        <div className='absolute left-0 top-0 h-full w-full duration-700 ease-in-out'>
           <Image
             className={clsx(
               'duration-700 ease-in-out',
-              isLoading
-                ? 'scale-[1.02] blur-xl'
-                : 'scale-100 blur-0',
-              rounded
+              isLoading ? 'scale-[1.02] blur-xl' : 'scale-100 blur-0',
+              rounded,
             )}
             width={
               resizedToMaxWidth ? Math.min(+width, RESIZE_MAX_WIDTH) : width
             }
             height={
-              resizedToMaxWidth
-                ? (RESIZE_MAX_WIDTH * +height) / +width
-                : height
+              resizedToMaxWidth ? (RESIZE_MAX_WIDTH * +height) / +width : height
             }
             unoptimized
             src={url}

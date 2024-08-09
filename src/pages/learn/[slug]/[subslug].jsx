@@ -9,7 +9,12 @@ import path from 'path';
 import CommingSoonState from '@/common/components/elements/State';
 import LessonsDetail from '@/modules/learnPage/components/LessonsDetail';
 
-const LessonSlug = ({ lessonDetail, learn, initialMarkdownContent, currentIndex }) => {
+const LessonSlug = ({
+  lessonDetail,
+  learn,
+  initialMarkdownContent,
+  currentIndex,
+}) => {
   const [isEnglish, setIsEnglish] = React.useState(true);
   const [content, setContent] = React.useState(initialMarkdownContent);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -19,11 +24,12 @@ const LessonSlug = ({ lessonDetail, learn, initialMarkdownContent, currentIndex 
     const newLanguage = isEnglish ? 'id' : 'en';
 
     // Make sure learn.contents is defined
-    const newContent = learn?.contents?.[newLanguage]?.[lessonDetail.subslug] || '';
+    const newContent =
+      learn?.contents?.[newLanguage]?.[lessonDetail.subslug] || '';
 
     setTimeout(() => {
       setContent(newContent);
-      setIsEnglish(prev => !prev);
+      setIsEnglish((prev) => !prev);
       setIsLoading(false);
     }, 2000); // 2 seconds delay
   };
@@ -48,12 +54,12 @@ const LessonSlug = ({ lessonDetail, learn, initialMarkdownContent, currentIndex 
     }
   };
 
-  const nextTitle = learn && currentIndex < learn.content.length - 1
-    ? learn.content[currentIndex + 1].title
-    : '';
-  const previousTitle = learn && currentIndex > 0
-    ? learn.content[currentIndex - 1].title
-    : '';
+  const nextTitle =
+    learn && currentIndex < learn.content.length - 1
+      ? learn.content[currentIndex + 1].title
+      : '';
+  const previousTitle =
+    learn && currentIndex > 0 ? learn.content[currentIndex - 1].title : '';
 
   const PAGE_DESCRIPTION = `Details of the lesson: ${lessonDetail.title}`;
   const canonicalUrl = `https://unforaimcode.vercel.app/learn/${learn?.slug || ''}/${lessonDetail?.subslug || ''}`;
@@ -80,7 +86,7 @@ const LessonSlug = ({ lessonDetail, learn, initialMarkdownContent, currentIndex 
           siteName: 'Learn Muhammad Rahim',
         }}
       />
-      <ContainerCenter data-aos="fade-up">
+      <ContainerCenter data-aos='fade-up'>
         <BackButton url={`/learn/${learn.slug}`} />
         <LessonsHeader
           learn={learn}
@@ -106,8 +112,24 @@ const LessonSlug = ({ lessonDetail, learn, initialMarkdownContent, currentIndex 
 
 export async function getServerSideProps(context) {
   const { slug, subslug } = context.params;
-  const filePathEn = path.join(process.cwd(), 'src', 'contents', 'learn', slug, 'en', `${subslug}.md`);
-  const filePathId = path.join(process.cwd(), 'src', 'contents', 'learn', slug, 'id', `${subslug}.md`);
+  const filePathEn = path.join(
+    process.cwd(),
+    'src',
+    'contents',
+    'learn',
+    slug,
+    'en',
+    `${subslug}.md`,
+  );
+  const filePathId = path.join(
+    process.cwd(),
+    'src',
+    'contents',
+    'learn',
+    slug,
+    'id',
+    `${subslug}.md`,
+  );
 
   let initialMarkdownContent = '';
   let learn = null;
@@ -124,11 +146,13 @@ export async function getServerSideProps(context) {
 
   if (learn) {
     // Find the specific lesson based on subslug
-    const lessonDetail = learn.content.find(item => item.subslug === subslug);
-    const currentIndex = learn.content.findIndex(item => item.subslug === subslug);
+    const lessonDetail = learn.content.find((item) => item.subslug === subslug);
+    const currentIndex = learn.content.findIndex(
+      (item) => item.subslug === subslug,
+    );
     const contents = {
       en: { [subslug]: initialMarkdownContent },
-      id: {} // Placeholder for other language content
+      id: {}, // Placeholder for other language content
     };
 
     // Fetch the content for the other language

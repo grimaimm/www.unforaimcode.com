@@ -3,11 +3,11 @@ import {
   HiOutlineBookmark as AboutIcon,
   // HiOutlineBriefcase as CareerIcon,
   // HiOutlineDocumentText as ResumeIcon
-} from "react-icons/hi"
+} from 'react-icons/hi';
 
-import { Tabs } from "@/common/components/elements/Tabs"
+import { Tabs } from '@/common/components/elements/Tabs';
 
-import Story from "./Story"
+import Story from './Story';
 
 const About = () => {
   const TABS = [
@@ -17,14 +17,14 @@ const About = () => {
           <AboutIcon size={17} /> Intro
         </TabLabel>
       ),
-      children: <Story />
-    }
-  ]
-  return <Tabs tabs={TABS} />
-}
+      children: <Story />,
+    },
+  ];
+  return <Tabs tabs={TABS} />;
+};
 
-export default About
+export default About;
 
 const TabLabel = ({ children }) => (
-  <div className="flex items-center justify-center gap-1.5">{children}</div>
-)
+  <div className='flex items-center justify-center gap-1.5'>{children}</div>
+);

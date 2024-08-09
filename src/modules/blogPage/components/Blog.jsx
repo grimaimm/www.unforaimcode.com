@@ -20,7 +20,7 @@ const Blog = ({ blogs }) => {
 
   return (
     <div style={{ overflow: 'hidden' }}>
-      <div className='grid gap-5 lg:px-2 pt-2 pb-5 sm:grid-cols-2 lg:grid-cols-3'>
+      <div className='grid gap-5 pb-5 pt-2 sm:grid-cols-2 lg:grid-cols-3 lg:px-2'>
         {blogs.map((blog, index) => (
           <motion.div key={index}>
             <BlogCard blog={blog} />

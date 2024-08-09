@@ -12,7 +12,7 @@ const PopUp = ({ message, duration, onClose }) => {
   }, [duration, onClose]);
 
   return (
-    <div className="fixed top-4 right-4 bg-white p-4 rounded shadow-md text-center z-50">
+    <div className='fixed right-4 top-4 z-50 rounded bg-white p-4 text-center shadow-md'>
       <p>{message}</p>
     </div>
   );

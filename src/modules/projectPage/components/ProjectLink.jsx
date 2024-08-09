@@ -10,14 +10,12 @@ const ProjectLink = ({ project }) => {
       <Link
         href={url}
         target='_blank'
-        rel="noopener noreferrer"
+        rel='noopener noreferrer'
         data-umami-event={eventName}
-        className='flex items-center gap-2 font-medium text-zinc-700 dark:text-indigo-300 transition-all duration-300 hover:text-indigo-500 dark:hover:text-indigo-400'
+        className='flex items-center gap-2 font-medium text-zinc-700 transition-all duration-300 hover:text-indigo-500 dark:text-indigo-300 dark:hover:text-indigo-400'
       >
         {icon}
-        <span className='text-[15px]'>
-          {text}
-        </span>
+        <span className='text-[15px]'>{text}</span>
       </Link>
     );
   };

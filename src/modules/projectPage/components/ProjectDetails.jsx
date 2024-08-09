@@ -16,15 +16,13 @@ const ProjectDetails = ({ project }) => {
           </span>
           <div className='flex flex-wrap items-center gap-3'>
             {project.stack.map((stack, index) => (
-              <div key={stack || index} className="w-6">
+              <div key={stack || index} className='w-6'>
                 <Tooltip title={stack}>{STACKS[stack]}</Tooltip>
               </div>
             ))}
           </div>
         </div>
-        <ProjectLink
-          project={project}
-        />
+        <ProjectLink project={project} />
       </div>
       <CloudinaryImage
         publicId={project.image}
@@ -38,6 +36,6 @@ const ProjectDetails = ({ project }) => {
       </div>
     </div>
   );
-}
+};
 
 export default ProjectDetails;

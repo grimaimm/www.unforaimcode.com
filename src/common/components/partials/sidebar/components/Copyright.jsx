@@ -2,14 +2,14 @@ import * as React from 'react';
 
 const Copyright = () => {
   return (
-    <div className="hidden lg:flex items-center justify-center gap-1 text-sm text-zinc-600 px-5 my-5">
+    <div className='my-5 hidden items-center justify-center gap-1 px-5 text-sm text-zinc-600 lg:flex'>
       <span>©</span>
       <span>2024</span>
       <span>with</span>
-      <span className="text-red-500 animate-pulse">❤</span>
+      <span className='animate-pulse text-red-500'>❤</span>
       <span>by</span>
-      <a href="/" target="_blank" rel="noopener noreferrer">
-        <span className="hover:dark:text-zinc-400 cursor-pointer">
+      <a href='/' target='_blank' rel='noopener noreferrer'>
+        <span className='cursor-pointer hover:dark:text-zinc-400'>
           aiiimmmm._
         </span>
       </a>

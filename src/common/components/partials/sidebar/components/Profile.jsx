@@ -8,6 +8,6 @@ const Profile = () => {
       <ProfileHeader />
     </AnimatePresence>
   );
-}
+};
 
 export default Profile;

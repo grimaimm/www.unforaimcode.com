@@ -1,15 +1,15 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const Custom404 = () => {
   return (
     <div
-      className="flex h-full flex-col items-center h-m justify-center mb-10 p-8 py-44 max-[1023px]:my-auto"
-      data-aos="fade-up"
+      className='h-m mb-10 flex h-full flex-col items-center justify-center p-8 py-44 max-[1023px]:my-auto'
+      data-aos='fade-up'
     >
-      <StyledHeading title="404" className="text-7xl font-bold">
+      <StyledHeading title='404' className='text-7xl font-bold'>
         404
       </StyledHeading>
-      <h2 className="animate-pulse text-center text-xl lg:text-xl">
+      <h2 className='animate-pulse text-center text-xl lg:text-xl'>
         Whoops, there doesn&apos;t seem to be anything here!
       </h2>
     </div>

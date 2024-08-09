@@ -23,6 +23,7 @@ pip install --upgrade pip
 ```bash
 pip install Flask
 ```
+
   </li>
   <li>
     <p>Tunggu sampai proses instalasi selesai. Pip akan mengunduh dan menginstal Flask beserta semua dependensinya.</p>
@@ -47,6 +48,7 @@ python
 ```bash
 import flask
 ```
+
   </li>
   <li>
     <p>Jika tidak ada pesan error, berarti Flask sudah berhasil diinstal.</p>

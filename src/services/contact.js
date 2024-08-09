@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
-const FORM_URL = "https://api.web3forms.com/submit";
+const FORM_URL = 'https://api.web3forms.com/submit';
 
 export const sendMessage = async (formData) => {
   const response = await axios.post(FORM_URL, formData);

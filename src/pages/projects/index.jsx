@@ -6,11 +6,12 @@ import PageHeading from '@/common/components/elements/PageHeading';
 import Projects from '@/modules/projectPage';
 
 const PAGE_TITLE = 'Projects';
-const PAGE_DESCRIPTION = 'Several projects that I have worked on, both private and open source.';
+const PAGE_DESCRIPTION =
+  'Several projects that I have worked on, both private and open source.';
 
 const ProjectsPage = ({ initialProjects }) => {
   const [visibleProjects, setVisibleProjects] = React.useState(6);
-  const loadMore = () => setVisibleProjects(prev => prev + 2);
+  const loadMore = () => setVisibleProjects((prev) => prev + 2);
   const hasMore = visibleProjects < initialProjects.length;
 
   return (
@@ -38,7 +39,6 @@ export async function getServerSideProps() {
 }
 
 export default ProjectsPage;
-
 
 // import { useState } from 'react';
 // import useSWR from 'swr';

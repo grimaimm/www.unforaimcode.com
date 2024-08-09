@@ -8,7 +8,7 @@ import {
   FiUser as ProfileIcon,
 } from 'react-icons/fi';
 import { PiChatCircleDotsBold as ChatIcon } from 'react-icons/pi';
-import { ImBlog as BlogIcon } from "react-icons/im";
+import { ImBlog as BlogIcon } from 'react-icons/im';
 
 const iconSize = 20;
 

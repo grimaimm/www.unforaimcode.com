@@ -1,3 +1,3 @@
-import Pagespeeds from "./Pagespeeds";
+import Pagespeeds from './Pagespeeds';
 
 export default Pagespeeds;
