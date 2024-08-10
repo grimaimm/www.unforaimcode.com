@@ -14,10 +14,10 @@ const DashboardPage = ({ fallback }) => {
     <>
       <NextSeo title={`${PAGE_TITLE} - Muhammad Rahim`} />
       <Container data-aos='fade-up'>
-        {/* <SWRConfig value={{ fallback }}> */}
-        <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-        <Dashboard />
-        {/* </SWRConfig> */}
+        <SWRConfig value={{ fallback }}>
+          <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+          <Dashboard />
+        </SWRConfig>
       </Container>
     </>
   );
