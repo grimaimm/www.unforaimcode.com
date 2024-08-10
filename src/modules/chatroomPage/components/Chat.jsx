@@ -12,7 +12,7 @@ import ChatList from './ChatList';
 import { useNotif } from '@/common/hooks/useNotif';
 
 const Chat = () => {
-  const { data: session, status } = useSession(); // Include session status
+  const { data: session } = useSession(); // Include session status
   const [messages, setMessages] = React.useState([]);
   const [replyToMessage, setReplyToMessage] = React.useState(null); // State to track the message being replied to
   const [loading, setLoading] = React.useState(true); // Add loading state
@@ -91,27 +91,24 @@ const Chat = () => {
   //   });
 
   //   return () => unsubscribe(); // Cleanup subscription on component unmount
-  // }, [databaseChat]); // Ensure useEffect re-runs if databaseChat changes
+  // }, [database, databaseChat]); // Ensure useEffect re-runs if databaseChat changes
 
   React.useEffect(() => {
     const messagesRef = ref(database, databaseChat);
     onValue(messagesRef, (snapshot) => {
-      const data = snapshot.val();
-
-      const transformMessages = Object.entries(data)
-        .map(([id, value]) => ({
-          id,
-          ...value,
-        }))
-        .sort((a, b) => {
+      const messagesData = snapshot.val();
+      if (messagesData) {
+        const messagesArray = Object.values(messagesData);
+        const sortedMessage = messagesArray.sort((a, b) => {
           const dateA = new Date(a.created_at);
           const dateB = new Date(b.created_at);
           return dateA.getTime() - dateB.getTime();
         });
-      setMessages(transformMessages);
-      setLoading(false);
+        setMessages(sortedMessage);
+        setLoading(false);
+      }
     });
-  }, [database, databaseChat]);
+  }, [database]);
 
   return (
     <>
