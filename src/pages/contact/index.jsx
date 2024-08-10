@@ -1,4 +1,5 @@
 import React from 'react';
+import { NextSeo } from 'next-seo';
 import { Container } from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import Contact from '@/modules/contactPage';
@@ -12,6 +13,7 @@ const PAGE_DESCRIPTION =
 const ContactPage = () => {
   return (
     <>
+      <NextSeo title={`${PAGE_TITLE} - Muhammad Rahim`} />
       <Container data-aos='fade-up'>
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <Contact />
