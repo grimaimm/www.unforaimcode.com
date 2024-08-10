@@ -5,7 +5,7 @@ import { getDatabase, onValue, ref, remove, set } from 'firebase/database';
 import { useSession } from 'next-auth/react';
 import { v4 as uuidv4 } from 'uuid';
 
-import { firebaseApp } from '@/common/libs/realtime-firebase';
+import { firebaseApp } from '@/common/libs/firebase';
 import ChatAuth from './ChatAuth';
 import ChatInput from './ChatInput';
 import ChatList from './ChatList';
@@ -105,10 +105,10 @@ const Chat = () => {
           return dateA.getTime() - dateB.getTime();
         });
         setMessages(sortedMessage);
-        setLoading(false);
       }
+      setLoading(false);
     });
-  }, [database]);
+  }, [database, databaseChat]);
 
   return (
     <>
