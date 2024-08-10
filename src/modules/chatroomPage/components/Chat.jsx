@@ -72,25 +72,46 @@ const Chat = () => {
     setReplyToMessage(null); // Clear the reply state
   };
 
+  // React.useEffect(() => {
+  //   const messagesRef = ref(database, databaseChat);
+  //   const unsubscribe = onValue(messagesRef, (snapshot) => {
+  //     const messagesData = snapshot.val();
+  //     if (messagesData) {
+  //       const messagesArray = Object.values(messagesData);
+  //       const sortedMessages = messagesArray.sort((a, b) => {
+  //         const dateA = new Date(a.created_at);
+  //         const dateB = new Date(b.created_at);
+  //         return dateA.getTime() - dateB.getTime();
+  //       });
+  //       setMessages(sortedMessages);
+  //     } else {
+  //       setMessages([]); // Handle the case where there are no messages
+  //     }
+  //     setLoading(false); // Ensure loading state is set to false after fetching data
+  //   });
+
+  //   return () => unsubscribe(); // Cleanup subscription on component unmount
+  // }, [databaseChat]); // Ensure useEffect re-runs if databaseChat changes
+
   React.useEffect(() => {
     const messagesRef = ref(database, databaseChat);
-    const unsubscribe = onValue(messagesRef, (snapshot) => {
-      const messagesData = snapshot.val();
-      if (messagesData) {
-        const messagesArray = Object.values(messagesData);
-        const sortedMessages = messagesArray.sort((a, b) => {
+    onValue(messagesRef, (snapshot) => {
+      const data = snapshot.val();
+
+      const transformMessages = Object.entries(data)
+        .map(([id, value]) => ({
+          id,
+          ...value,
+        }))
+        .sort((a, b) => {
           const dateA = new Date(a.created_at);
           const dateB = new Date(b.created_at);
           return dateA.getTime() - dateB.getTime();
         });
-        setMessages(sortedMessages);
-        setLoading(false);
-      }
-      // Ensure loading state is set to false after fetching data
+      setMessages(transformMessages);
+      setLoading(false);
     });
-
-    // return () => unsubscribe(); // Cleanup subscription on component unmount
-  }, [databaseChat]); // Ensure useEffect re-runs if databaseChat changes
+  }, [database, databaseChat]);
 
   return (
     <>
