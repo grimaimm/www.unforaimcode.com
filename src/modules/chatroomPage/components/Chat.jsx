@@ -12,9 +12,10 @@ import ChatList from './ChatList';
 import { useNotif } from '@/common/hooks/useNotif';
 
 const Chat = ({ isWidget = false }) => {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession(); // Include session status
   const [messages, setMessages] = React.useState([]);
   const [replyToMessage, setReplyToMessage] = React.useState(null); // State to track the message being replied to
+  const [loading, setLoading] = React.useState(true); // Add loading state
 
   const database = getDatabase(firebaseApp);
   const databaseChat = process.env.NEXT_PUBLIC_FIREBASE_DATABASE_CHAT;
@@ -73,19 +74,24 @@ const Chat = ({ isWidget = false }) => {
 
   React.useEffect(() => {
     const messagesRef = ref(database, databaseChat);
-    onValue(messagesRef, (snapshot) => {
+    const unsubscribe = onValue(messagesRef, (snapshot) => {
       const messagesData = snapshot.val();
       if (messagesData) {
         const messagesArray = Object.values(messagesData);
-        const sortedMessage = messagesArray.sort((a, b) => {
+        const sortedMessages = messagesArray.sort((a, b) => {
           const dateA = new Date(a.created_at);
           const dateB = new Date(b.created_at);
           return dateA.getTime() - dateB.getTime();
         });
-        setMessages(sortedMessage);
+        setMessages(sortedMessages);
+        setLoading(false);
+      } else {
+        setMessages([]); // Handle the case where there are no messages
       }
     });
-  }, [database]);
+
+    return () => unsubscribe(); // Cleanup subscription on component unmount
+  }, [databaseChat]); // Ensure useEffect re-runs if databaseChat changes
 
   return (
     <>
@@ -93,7 +99,8 @@ const Chat = ({ isWidget = false }) => {
         isWidget={isWidget}
         messages={messages}
         onDeleteMessage={handleDeleteMessage}
-        onReplyToMessage={handleReplyToMessage} // Pass the handleReplyToMessage function
+        onReplyToMessage={handleReplyToMessage}
+        loading={loading} // Pass loading state
       />
       {session ? (
         <ChatInput
