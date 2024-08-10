@@ -1,14 +1,29 @@
 import * as React from 'react';
-import styled from '@emotion/styled';
-import clsx from 'clsx';
+import { useRouter } from 'next/router';
 
 export const ButtonCollapse = ({ toggleOpen, className }) => {
   const [isClosed, setIsClosed] = React.useState(false);
+  const router = useRouter();
 
   const handleClick = () => {
     setIsClosed(!isClosed);
     toggleOpen();
   };
+
+  // Reset isClosed state on route change
+  React.useEffect(() => {
+    const handleRouteChange = () => {
+      setIsClosed(false);
+    };
+
+    // Subscribe to route changes
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    // Cleanup the subscription
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <div>
@@ -31,55 +46,3 @@ export const ButtonCollapse = ({ toggleOpen, className }) => {
     </div>
   );
 };
-
-export const MobileMenuButton = ({ toggleOpen }) => {
-  const [isClosed, setIsClosed] = React.useState(false);
-
-  const handleClick = () => {
-    setIsClosed(!isClosed);
-    toggleOpen();
-  };
-
-  const menuSpanData = [{ index: 1 }, { index: 2 }, { index: 3 }];
-
-  return (
-    <StyledMenu className='flex lg:hidden' onClick={handleClick}>
-      {menuSpanData.map((item) => (
-        <StyledMenuSpan
-          key={item.index}
-          className={clsx('bg-zinc-950 dark:bg-zinc-100', isClosed && 'active')}
-        />
-      ))}
-    </StyledMenu>
-  );
-};
-
-const StyledMenu = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 21px;
-  width: 26px;
-  cursor: pointer;
-`;
-
-const StyledMenuSpan = styled.span`
-  width: 100%;
-  height: 3px;
-  transition: all 0.5s ease;
-  border-radius: 10px;
-
-  &.active:nth-of-type(1),
-  &.active:nth-of-type(3) {
-    transform-origin: left;
-  }
-  &.active:nth-of-type(1) {
-    transform: rotate(45deg);
-  }
-  &.active:nth-of-type(2) {
-    width: 0;
-  }
-  &.active:nth-of-type(3) {
-    transform: rotate(-45deg);
-  }
-`;

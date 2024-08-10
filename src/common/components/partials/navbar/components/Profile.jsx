@@ -38,7 +38,6 @@ const Profile = ({ toggleOpen, isOpen }) => {
           <ToggleThemeButton
             className={`transition-opacity duration-300 ${isOpen ? 'fade-in-top max-[376px]:opacity-100' : 'mr-10 max-[376px]:hidden'}`}
           />
-          {/* <ButtonSwitchThemeNavbar className={`${isOpen ? 'block max-[375px]:block min-[376px]:hidden' : 'max-[376px]:hidden min-[375px]:hidden'}`} /> */}
         </div>
       </div>
       <div className='fixed right-3 top-[1.48rem] z-50'>
