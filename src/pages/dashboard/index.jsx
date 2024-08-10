@@ -11,12 +11,12 @@ const PAGE_DESCRIPTION =
 
 const DashboardPage = ({ fallback }) => {
   return (
-    <SWRConfig value={{ fallback }}>
-      <Container data-aos='fade-up'>
+    <Container data-aos='fade-up'>
+      <SWRConfig value={{ fallback }}>
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <Dashboard />
-      </Container>
-    </SWRConfig>
+      </SWRConfig>
+    </Container>
   );
 };
 
