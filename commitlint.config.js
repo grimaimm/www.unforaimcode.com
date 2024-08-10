@@ -5,17 +5,17 @@ module.exports = {
       2,
       'always',
       [
-        'feat',
-        'fix',
-        'docs',
-        'chore',
-        'style',
-        'refactor',
-        'ci',
-        'test',
-        'revert',
-        'perf',
-        'vercel',
+        'feat', // Fitur baru atau fungsionalitas
+        'fix', // Memperbaiki bug
+        'docs', // Perubahan dokumentasi
+        'chore', // Tugas pemeliharaan umum (misalnya, memperbarui dependensi)
+        'style', // Perubahan yang tidak mempengaruhi kode (misalnya, pemformatan)
+        'refactor', // Perubahan kode yang tidak memperbaiki bug atau menambah fitur
+        'ci', // Perubahan pada konfigurasi atau skrip integrasi berkelanjutan
+        'test', // Menambah atau memodifikasi pengujian
+        'revert', // Mengembalikan commit sebelumnya
+        'perf', // Peningkatan performa
+        'vercel', // Perubahan terkait dengan deployment Vercel (tipe khusus untuk kasus tertentu)
       ],
     ],
   },
