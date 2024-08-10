@@ -36,10 +36,10 @@ const Projects = ({ projects, loadMore, hasMore }) => {
       <div className='grid gap-5 pb-5 pt-2 sm:grid-cols-2 lg:px-2'>
         {filteredProjects.map((project, index) => (
           <motion.div
-            key={project.id || index}
+            key={index}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.3, delay: index * 0.1 }}
           >
             <ProjectCard project={project} />
           </motion.div>
