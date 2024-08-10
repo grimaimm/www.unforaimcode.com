@@ -1,10 +1,10 @@
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '@/common/libs/firebase';
+import { firestore } from '@/common/libs/firebase';
 
 // Fungsi untuk mengambil semua pagespeed dari Firestore
 export const FetchPagespeed = async () => {
   try {
-    const PagespeedsCollection = collection(db, 'Pagespeed');
+    const PagespeedsCollection = collection(firestore, 'Pagespeed');
     const PagespeedsSnapshot = await getDocs(PagespeedsCollection);
     const PagespeedList = PagespeedsSnapshot.docs.map((doc) => ({
       id: doc.id,

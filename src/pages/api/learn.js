@@ -9,7 +9,7 @@ import {
   increment,
   orderBy,
 } from 'firebase/firestore';
-import { db } from '@/common/libs/firebase';
+import { firestore } from '@/common/libs/firebase';
 
 const convertTimestamps = (learns) =>
   learns.map((learn) => ({
@@ -19,7 +19,7 @@ const convertTimestamps = (learns) =>
 
 export const FetchLearns = async () => {
   try {
-    const LearnCollection = collection(db, 'Learn');
+    const LearnCollection = collection(firestore, 'Learn');
     const LearnSnapshot = await getDocs(LearnCollection);
     const LearnList = LearnSnapshot.docs.map((doc) => ({
       id: doc.id,
@@ -34,7 +34,7 @@ export const FetchLearns = async () => {
 
 export const FetchLearnBySlug = async (slug) => {
   try {
-    const q = query(collection(db, 'Learn'), where('slug', '==', slug));
+    const q = query(collection(firestore, 'Learn'), where('slug', '==', slug));
     const querySnapshot = await getDocs(q);
 
     return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));

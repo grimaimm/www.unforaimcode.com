@@ -1,5 +1,5 @@
 import { collection, getDocs, query, orderBy, where } from 'firebase/firestore';
-import { db } from '@/common/libs/firebase';
+import { firestore } from '@/common/libs/firebase';
 
 // Fungsi untuk mengkonversi Timestamp ke string ISO
 const convertTimestamps = (projects) =>
@@ -12,7 +12,7 @@ const convertTimestamps = (projects) =>
 // export const FetchProjects = async () => {
 //   try {
 //     const q = query(
-//       collection(db, 'Projects'),
+//       collection(firestore, 'Projects'),
 //       orderBy('is_featured', 'desc'),
 //       orderBy('updated_at', 'desc')
 //     );
@@ -26,7 +26,7 @@ const convertTimestamps = (projects) =>
 export const FetchProjects = async () => {
   try {
     const q = query(
-      collection(db, 'Projects'),
+      collection(firestore, 'Projects'),
       orderBy('is_featured', 'desc'),
       orderBy('updated_at', 'desc'),
     );
@@ -45,7 +45,10 @@ export const FetchProjects = async () => {
 // Fungsi untuk mengambil proyek berdasarkan slug
 export const FetchProjectBySlug = async (slug) => {
   try {
-    const q = query(collection(db, 'Projects'), where('slug', '==', slug));
+    const q = query(
+      collection(firestore, 'Projects'),
+      where('slug', '==', slug),
+    );
     const querySnapshot = await getDocs(q);
 
     return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));

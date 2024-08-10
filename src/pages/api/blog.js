@@ -10,7 +10,7 @@ import {
   increment,
   orderBy,
 } from 'firebase/firestore';
-import { db } from '@/common/libs/firebase';
+import { firestore } from '@/common/libs/firebase';
 
 const convertTimestamps = (blogs) =>
   blogs.map((blog) => ({
@@ -21,7 +21,7 @@ const convertTimestamps = (blogs) =>
 // Fungsi untuk mengambil semua blog dari Firestore
 // export const FetchBlogs = async () => {
 //   try {
-//     const BlogsCollection = collection(db, "Blogs");
+//     const BlogsCollection = collection(firestore, "Blogs");
 //     const BlogsSnapshot = await getDocs(BlogsCollection);
 //     const BlogtList = BlogsSnapshot.docs.map(doc => ({
 //       id: doc.id,
@@ -39,7 +39,7 @@ const convertTimestamps = (blogs) =>
 export const FetchBlogs = async () => {
   try {
     const BlogsCollection = query(
-      collection(db, 'Blogs'),
+      collection(firestore, 'Blogs'),
       orderBy('published', 'desc'),
     );
     const BlogsSnapshot = await getDocs(BlogsCollection);
@@ -57,7 +57,7 @@ export const FetchBlogs = async () => {
 // Fungsi untuk mengambil Blog berdasarkan slug
 export const FetchBlogBySlug = async (slug) => {
   try {
-    const q = query(collection(db, 'Blogs'), where('slug', '==', slug));
+    const q = query(collection(firestore, 'Blogs'), where('slug', '==', slug));
     const querySnapshot = await getDocs(q);
 
     return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
@@ -70,7 +70,7 @@ export const FetchBlogBySlug = async (slug) => {
 // Fungsi untuk memperbarui total views blog
 export const UpdateBlogViews = async (id) => {
   try {
-    const blogRef = doc(db, 'Blogs', id);
+    const blogRef = doc(firestore, 'Blogs', id);
     await updateDoc(blogRef, {
       total_views: increment(1),
     });
@@ -84,7 +84,7 @@ export default async function handler(req, res) {
     const { id, action } = req.body; // Include 'action' in the destructuring assignment
 
     try {
-      const blogRef = doc(db, 'Blogs', id);
+      const blogRef = doc(firestore, 'Blogs', id);
 
       if (action === 'like') {
         await updateDoc(blogRef, {
@@ -113,7 +113,7 @@ export default async function handler(req, res) {
 //     const { id } = req.body;
 
 //     try {
-//       const blogRef = doc(db, 'Blogs', id);
+//       const blogRef = doc(firestore, 'Blogs', id);
 //       await updateDoc(blogRef, {
 //         likes: increment(1),
 //         dislikes: increment(1),
@@ -132,7 +132,7 @@ export default async function handler(req, res) {
 // Fungsi untuk memperbarui total views
 // export const updateBlogViews = async (id) => {
 //   try {
-//     const blogRef = doc(db, "Blogs", id);
+//     const blogRef = doc(firestore, "Blogs", id);
 //     const blogSnap = await getDoc(blogRef);
 
 //     if (blogSnap.exists()) {
