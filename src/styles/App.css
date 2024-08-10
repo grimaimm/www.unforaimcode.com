@@ -57,6 +57,14 @@
   z-index: 0;
 }
 
+.image-transition {
+  transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
+  -webkit-transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
+  -moz-transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
+  -ms-transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
+  -o-transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
+}
+
 .scroller {
   overflow: hidden;
   -webkit-mask: linear-gradient(

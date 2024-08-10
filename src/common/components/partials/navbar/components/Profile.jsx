@@ -42,8 +42,7 @@ const Profile = ({ toggleOpen, isOpen }) => {
           decoding='async'
           height={`${isOpen ? '80' : '48'}`}
           width={`${isOpen ? '80' : '48'}`}
-          rounded='rounded-full'
-          className='scale-100 rounded-full border-2 border-zinc-400 blur-0 grayscale-0 duration-700 ease-in-out dark:border-zinc-700 lg:hover:scale-105'
+          className='image-transition rounded-full border-2 border-zinc-400 dark:border-zinc-700 lg:hover:scale-105'
           src='/images/Me/profileImage.jpg'
         />
         <div
