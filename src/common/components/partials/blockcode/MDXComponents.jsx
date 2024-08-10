@@ -73,7 +73,7 @@
 //             <blockquote
 //               id={id} // Add the ID here
 //               className={`${isBlogRoute ? 'my-6' : ''
-//                 } rounded-br-2xl border-l-[5px] border-neutral-700 border-l-cyan-500 bg-neutral-200 py-3 pl-3 md:pl-6 font-sora text-lg font-medium text-cyan-800 dark:bg-neutral-800 dark:text-cyan-200`}
+//                 } rounded-br-2xl border-l-[5px] border-neutral-700 border-l-cyan-500 bg-neutral-200 py-3 pl-3 md:pl-6 text-lg font-medium text-cyan-800 dark:bg-neutral-800 dark:text-cyan-200`}
 //               {...props}
 //             />
 //           );
@@ -144,7 +144,7 @@ const BlockquoteComponent = ({ node, ...props }) => {
   return (
     <blockquote
       id={id}
-      className={`${isBlogRoute ? 'my-6' : ''} rounded-br-2xl border-l-[5px] border-neutral-700 border-l-cyan-500 bg-neutral-200 py-3 pl-3 font-sora text-lg font-medium text-cyan-800 dark:bg-neutral-800 dark:text-cyan-200 md:pl-6`}
+      className={`${isBlogRoute ? 'my-6' : ''} rounded-br-2xl border-l-[5px] border-neutral-700 border-l-cyan-500 bg-neutral-200 py-3 pl-3 text-lg font-medium text-cyan-800 dark:bg-neutral-800 dark:text-cyan-200 md:pl-6`}
       {...props}
     />
   );

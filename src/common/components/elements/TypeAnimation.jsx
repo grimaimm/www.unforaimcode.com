@@ -19,7 +19,7 @@ export default function TypeAnimation({ sequence, delay = 1000 }) {
       speed={10}
       deletionSpeed={70}
       repeat={Infinity}
-      aria-label={sequence[0]}
+      // aria-label={sequence[0]}
     />
   );
 }

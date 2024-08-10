@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { AiFillPushpin as PinIcon } from 'react-icons/ai';
 import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi';
 import Card from '@/common/components/elements/Card';
-// import Image from '@/common/components/elements/Image';
 import Tooltip from '@/common/components/elements/Tooltip';
 import { STACKS } from '@/common/components/partials/skills/components/Stack';
 import CloudinaryImage from '@/common/components/elements/CloudinaryImage';
@@ -22,19 +21,12 @@ const ProjectCard = ({ project }) => {
           </div>
         )}
         <div className='relative'>
-          {/* <Image
-            src={project.image}
-            width={640}
-            height={360}
-            alt={project.title}
-            className='h-full w-full rounded-t-xl object-cover'
-          /> */}
           <CloudinaryImage
-            publicId={project.image}
+            publicId={`w_1000/${project.image}`}
             alt={project.title}
             width={640}
             height={360}
-            className='h-full w-full rounded-t-xl object-cover'
+            className='rounded-t-xl object-cover'
           />
           <div className='absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 rounded-t-xl bg-black text-sm font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-80'>
             <span>View Project</span>

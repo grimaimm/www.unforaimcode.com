@@ -58,7 +58,7 @@ const MDXContent = ({ children, className = {} }) => {
           return (
             <blockquote
               id={id}
-              className={`rounded-br-2xl border-l-[5px] bg-neutral-200 py-3 pl-3 font-sora text-lg font-medium dark:bg-neutral-800 md:pl-6 ${className.blockquote || ''}`}
+              className={`rounded-br-2xl border-l-[5px] bg-neutral-200 py-3 pl-3 text-lg font-medium dark:bg-neutral-800 md:pl-6 ${className.blockquote || ''}`}
               {...props}
             />
           );

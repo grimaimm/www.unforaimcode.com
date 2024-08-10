@@ -24,7 +24,6 @@ const BlogPage = ({ blogs }) => {
     <>
       <NextSeo title={`${PAGE_TITLE} - Muhammad Rahim`} />
       <ContainerCenter data-aos='fade-up'>
-        <BackButton url='/' />
         <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         <Blog blogs={blogs} />
       </ContainerCenter>

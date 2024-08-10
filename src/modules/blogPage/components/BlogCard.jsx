@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi';
 import Card from '@/common/components/elements/Card';
-import Image from '@/common/components/elements/Image';
 import { formatDate } from '@/common/utils/Date';
 import CloudinaryImage from '@/common/components/elements/CloudinaryImage';
 
@@ -16,15 +15,8 @@ const BlogCard = ({ blog }) => {
     <Link href={`/blog/${blog.slug}`} aria-label={`View blog: ${blog.title}`}>
       <Card className='group relative h-full w-full cursor-pointer border border-zinc-200 bg-gradient-to-b dark:border-zinc-800 dark:from-zinc-800 dark:to-zinc-950 lg:hover:scale-[102%]'>
         <div className='relative'>
-          {/* <Image
-            src={blog.cloudinary}
-            width={640}
-            height={360}
-            alt={blog.title}
-            className='h-full w-full rounded-t-xl object-cover'
-          /> */}
           <CloudinaryImage
-            publicId={blog.cloudinary}
+            publicId={`w_1000/${blog.cloudinary}`}
             alt={blog.title}
             width={640}
             height={320}

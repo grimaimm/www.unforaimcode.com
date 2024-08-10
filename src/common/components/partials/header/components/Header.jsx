@@ -36,7 +36,7 @@ const Header = () => {
           {!showMenu && (
             <div className='flex items-center gap-3'>
               <Link href='/'>
-                <h2 className='admin-name font-sora text-lg font-bold dark:text-zinc-200 lg:font-medium'>
+                <h2 className='admin-name text-lg font-bold dark:text-zinc-200 lg:font-medium'>
                   Muhammad Rahim
                 </h2>
               </Link>
@@ -84,6 +84,8 @@ const Header = () => {
           <button
             className='flex items-center gap-2 rounded-md border p-2 backdrop-blur dark:border-zinc-700 dark:bg-zinc-900'
             onClick={() => setShowMenu(!showMenu)}
+            id='header-menu-btn'
+            aria-label='Toggle Menu'
           >
             {showMenu ? <CloseIcon size={18} /> : <MenuIcon size={18} />}
           </button>
