@@ -84,10 +84,10 @@ const Chat = ({ isWidget = false }) => {
           return dateA.getTime() - dateB.getTime();
         });
         setMessages(sortedMessages);
-        setLoading(false);
       } else {
         setMessages([]); // Handle the case where there are no messages
       }
+      setLoading(false); // Ensure loading state is set to false after fetching data
     });
 
     return () => unsubscribe(); // Cleanup subscription on component unmount
