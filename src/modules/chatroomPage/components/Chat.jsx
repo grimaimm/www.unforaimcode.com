@@ -84,13 +84,12 @@ const Chat = () => {
           return dateA.getTime() - dateB.getTime();
         });
         setMessages(sortedMessages);
-      } else {
-        setMessages([]); // Handle the case where there are no messages
+        setLoading(false);
       }
-      setLoading(false); // Ensure loading state is set to false after fetching data
+      // Ensure loading state is set to false after fetching data
     });
 
-    return () => unsubscribe(); // Cleanup subscription on component unmount
+    // return () => unsubscribe(); // Cleanup subscription on component unmount
   }, [databaseChat]); // Ensure useEffect re-runs if databaseChat changes
 
   return (
