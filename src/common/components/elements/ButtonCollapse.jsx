@@ -1,29 +1,9 @@
 import * as React from 'react';
-import { useRouter } from 'next/router';
 
-export const ButtonCollapse = ({ toggleOpen, className }) => {
-  const [isClosed, setIsClosed] = React.useState(false);
-  const router = useRouter();
-
+export const ButtonCollapse = ({ toggleOpen, className, isClosed }) => {
   const handleClick = () => {
-    setIsClosed(!isClosed);
     toggleOpen();
   };
-
-  // Reset isClosed state on route change
-  React.useEffect(() => {
-    const handleRouteChange = () => {
-      setIsClosed(false);
-    };
-
-    // Subscribe to route changes
-    router.events.on('routeChangeStart', handleRouteChange);
-
-    // Cleanup the subscription
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChange);
-    };
-  }, [router.events]);
 
   return (
     <div>
