@@ -23,28 +23,19 @@ const Providers = [
   },
 ];
 
-const ChatAuth = ({ isWidget = false }) => {
+const ChatAuth = () => {
   return (
     <div className='flex flex-col border-t border-zinc-300 py-1 dark:border-zinc-900'>
       <div className='mb-1 space-y-5 px-4 py-3 text-center text-zinc-700 dark:text-zinc-400'>
         <p className='text-sm'>
           Please sign in to start. Don't worry, your data is safe.
         </p>
-        <div
-          className={clsx(
-            'flex flex-col items-center justify-center gap-4 lg:flex-row lg:gap-5',
-            isWidget && '!flex-col !gap-4',
-          )}
-        >
+        <div className='flex flex-col items-center justify-center gap-4 lg:flex-row lg:gap-5'>
           {Providers?.map((button) => (
             <Button
               key={button.id}
               onClick={() => signIn(button.id)}
-              className={`flex w-full items-center justify-center gap-2 rounded-lg dark:!border-zinc-700 ${
-                button.bgColor
-              } px-2.5 py-2.5 shadow-sm hover:!opacity-80 lg:w-fit ${
-                isWidget && '!w-full'
-              }`}
+              className={`flex w-full items-center justify-center gap-2 rounded-lg dark:!border-zinc-700 ${button.bgColor} px-2.5 py-2.5 shadow-sm hover:!opacity-80 lg:w-fit`}
               data-umami-event={`Sign In to Chat: ${button.label}`}
             >
               {button.icon}

@@ -11,7 +11,7 @@ import ChatInput from './ChatInput';
 import ChatList from './ChatList';
 import { useNotif } from '@/common/hooks/useNotif';
 
-const Chat = ({ isWidget = false }) => {
+const Chat = () => {
   const { data: session, status } = useSession(); // Include session status
   const [messages, setMessages] = React.useState([]);
   const [replyToMessage, setReplyToMessage] = React.useState(null); // State to track the message being replied to
@@ -96,7 +96,6 @@ const Chat = ({ isWidget = false }) => {
   return (
     <>
       <ChatList
-        isWidget={isWidget}
         messages={messages}
         onDeleteMessage={handleDeleteMessage}
         onReplyToMessage={handleReplyToMessage}
@@ -105,12 +104,11 @@ const Chat = ({ isWidget = false }) => {
       {session ? (
         <ChatInput
           onSendMessage={handleSendMessage}
-          isWidget={isWidget}
           replyTo={replyToMessage ? replyToMessage.name : null} // Pass replyToMessage name
           onCancelReply={handleCancelReply} // Pass the cancel reply function
         />
       ) : (
-        <ChatAuth isWidget={isWidget} />
+        <ChatAuth />
       )}
     </>
   );

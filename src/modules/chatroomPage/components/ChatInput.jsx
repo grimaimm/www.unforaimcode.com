@@ -1,3 +1,4 @@
+// src/modules/chatroomPage/components/ChatInput.jsx
 import clsx from 'clsx';
 import * as React from 'react';
 import { motion } from 'framer-motion';
@@ -5,7 +6,7 @@ import { FiSend as SendIcon, FiX as CloseIcon } from 'react-icons/fi'; // Import
 
 import ChatUserInfo from './ChatUserInfo';
 
-const ChatInput = ({ onSendMessage, isWidget, replyTo, onCancelReply }) => {
+const ChatInput = ({ onSendMessage, replyTo, onCancelReply }) => {
   const [message, setMessage] = React.useState('');
   const [isSending, setIsSending] = React.useState(false);
   const inputRef = React.useRef(null);
@@ -88,7 +89,7 @@ const ChatInput = ({ onSendMessage, isWidget, replyTo, onCancelReply }) => {
           <SendIcon size={18} />
         </button>
       </form>
-      <ChatUserInfo isWidget={isWidget} />
+      <ChatUserInfo />
     </>
   );
 };

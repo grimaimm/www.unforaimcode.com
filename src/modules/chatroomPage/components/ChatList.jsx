@@ -1,11 +1,9 @@
-// src/modules/chatroomPage/components/ChatList.jsx
 import * as React from 'react';
 import ChatItem from './ChatItem';
 import ChatItemSkeleton from './ChatItemSkeleton'; // Import the ChatItemSkeleton
 
 const ChatList = ({
   messages,
-  isWidget = false,
   onDeleteMessage,
   onReplyToMessage,
   loading, // Add loading as a prop
@@ -53,7 +51,7 @@ const ChatList = ({
 
   React.useEffect(() => {
     const handleResize = () => {
-      const newHeight = isWidget ? '500px' : `${window.innerHeight - 360}px`;
+      const newHeight = `${window.innerHeight - 360}px`;
       setChatListHeight(newHeight);
     };
 
@@ -64,7 +62,7 @@ const ChatList = ({
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [isWidget]);
+  }, []); // Empty dependency array to only run on mount and unmount
 
   const handleReplyClick = (id) => {
     if (onReplyToMessage) {
