@@ -40,9 +40,10 @@ const Profile = ({ toggleOpen, isOpen }) => {
         <Image
           alt='Muhammad Rahim'
           decoding='async'
-          height={`${isOpen ? '80' : '48'}`}
-          width={`${isOpen ? '80' : '48'}`}
-          className='image-transition rounded-full border-2 border-zinc-400 dark:border-zinc-700 lg:hover:scale-105'
+          height={isOpen ? 80 : 48}
+          width={isOpen ? 80 : 48}
+          rounded='rounded-full'
+          className='border-2 border-zinc-400 dark:border-zinc-700'
           src='/images/Me/profileImage.jpg'
         />
         <div
