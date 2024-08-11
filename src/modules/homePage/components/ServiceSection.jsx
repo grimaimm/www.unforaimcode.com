@@ -9,6 +9,7 @@ import { servicesMock } from '@/common/mocks/services';
 import Card from '@/common/components/elements/Card';
 import Button from '@/common/components/elements/Button';
 import { BiRocket as RocketIcon } from 'react-icons/bi';
+import { useRouter } from 'next/router';
 
 export const ServiceSection = ({ services }) => {
   return (
@@ -32,6 +33,7 @@ export const ServiceSection = ({ services }) => {
 };
 
 export const ServiceSectionContactMe = () => {
+  const router = useRouter();
   return (
     <Card className='border border-zinc-200 bg-gradient-to-br from-white to-zinc-100 px-6 py-4 dark:border-zinc-700 dark:from-zinc-800 dark:to-zinc-900/50'>
       <div className='flex items-center space-x-2'>
@@ -45,6 +47,7 @@ export const ServiceSectionContactMe = () => {
       <Button
         className='px-4 py-2 text-sm'
         data-umami-event='Click Contact Button'
+        onClick={() => router.push('/contact')}
       >
         Contact me
       </Button>

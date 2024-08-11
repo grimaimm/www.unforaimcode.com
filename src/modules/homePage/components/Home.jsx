@@ -5,12 +5,15 @@ import Introduction from './Introduction';
 import { PageBreakline } from '@/common/components/elements/Breakline';
 import { ServiceSection, ServiceSectionContactMe } from './ServiceSection';
 import SkillSection from '@/common/components/partials/skills/components/SkillSection';
+import LatestArticlesSection from './LatestArticlesSection';
 
 const Home = () => {
   return (
     <>
       <Container data-aos='fade-up'>
         <Introduction />
+        <PageBreakline className='my-6' />
+        <LatestArticlesSection />
         <PageBreakline className='my-6' />
         <SkillSection />
         <PageBreakline className='my-6' />
