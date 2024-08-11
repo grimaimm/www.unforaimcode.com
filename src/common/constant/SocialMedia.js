@@ -13,7 +13,7 @@ const iconSize = 20;
 export const SOCIAL_MEDIA = [
   {
     title: 'Github',
-    href: 'https://github.com/aulianza',
+    href: 'https://github.com/grimaimm',
     classIcon:
       'border border-slate-700/30 group-hover:bg-slate-700/30 text-slate-300 hover:text-slate-200',
     icon: <GithubIcon size={iconSize} />,
@@ -25,7 +25,7 @@ export const SOCIAL_MEDIA = [
   },
   {
     title: 'LinkedIn',
-    href: 'https://github.com/aulianza',
+    href: 'https://linkedin.com/in/muhammadrahiim/',
     classIcon:
       'border border-sky-700/30 group-hover:bg-sky-700/30 text-sky-300 hover:text-sky-200',
     icon: <LinkedinIcon size={iconSize} />,
@@ -37,7 +37,7 @@ export const SOCIAL_MEDIA = [
   },
   {
     title: 'Email',
-    href: 'https://github.com/aulianza',
+    href: 'mailto:muhammadrahim@students.amikom.ac.id',
     classIcon:
       'border border-rose-700/30 group-hover:bg-rose-700/30 text-rose-300 hover:text-rose-200',
     icon: <EmailIcon size={iconSize} />,
@@ -49,7 +49,7 @@ export const SOCIAL_MEDIA = [
   },
   {
     title: 'Instagram',
-    href: 'https://github.com/aulianza',
+    href: 'https://instagram.com/aiiimmmm._/',
     classIcon:
       'border border-purple-700/30 group-hover:bg-purple-700/30 text-purple-300 hover:text-purple-200',
     icon: <InstagramIcon size={iconSize} />,
@@ -61,7 +61,7 @@ export const SOCIAL_MEDIA = [
   },
   {
     title: 'TikTok',
-    href: 'https://github.com/aulianza',
+    href: 'https://tiktok.com/@panggilaimm',
     classIcon:
       'border border-cyan-700/30 group-hover:bg-cyan-700/30 text-cyan-300 hover:text-cyan-200',
     icon: <TikTokIcon size={iconSize} />,
