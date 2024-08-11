@@ -5,12 +5,7 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
-        <script
-          async
-          defer
-          src='https://cloud.umami.is/script.js'
-          data-website-id='781f8ae1-ebd5-4afa-b05c-fe36d9099c05'
-        ></script>
+        {/* Icons and theme color */}
         <link
           rel='apple-touch-icon'
           sizes='180x180'
@@ -28,21 +23,33 @@ export default function Document() {
           sizes='16x16'
           href='/favicon/favicon-16x16.png'
         />
-        <link rel='manifest' href='/favicon/site.webmanifest' />
-        <link
-          rel='mask-icon'
-          href='/favicon/safari-pinned-tab.svg'
-          color='#121212'
-        />
-        <meta name='theme-color' content='#121212' />
+        <link rel='manifest' href='/site.webmanifest' />
+        <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
+        <meta name='msapplication-TileColor' content='#603cba' />
+        <meta name='theme-color' content='#ffffff' />
+
+        {/* Umami Analytics Script */}
+        <script
+          defer
+          src='https://cloud.umami.is/script.js'
+          data-website-id='781f8ae1-ebd5-4afa-b05c-fe36d9099c05'
+        ></script>
+
+        {/* SEO and Structured Data */}
         <meta
           name='keywords'
-          content='unforaimcode, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python'
+          content='unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python'
         />
-        <meta
-          name='google-site-verification'
-          content='4UATjALUSEx0uYrFZkjp5F0jjuA_TXSHDjX3Jzpm-HQ'
-        />
+        <script type='application/ld+json'>
+          {JSON.stringify({
+            '@context': 'http://schema.org',
+            '@type': 'Person',
+            name: 'Muhammad Rahim',
+            url: 'https://unforaimcode.vercel.app',
+            image:
+              'https://res.cloudinary.com/aiiimmmm/image/upload/v1722931611/metaImage-unforaimcode_o8qyur.png',
+          })}
+        </script>
       </Head>
       <body className={onestSans.className}>
         <Main />
