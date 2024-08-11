@@ -31,7 +31,7 @@ const ProjectDetails = ({ project }) => {
         className='rounded-xl'
       />
       {project.content ? (
-        <div className='space-y-6 leading-[1.8] dark:text-zinc-300'>
+        <div className='space-y-8 leading-[1.8] dark:text-zinc-300'>
           <MDProjectContent content={project.content} />
         </div>
       ) : (

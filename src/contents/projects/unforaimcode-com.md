@@ -1,7 +1,7 @@
-<div class='space-y-4'>
-  <blockquote>
-    <strong>Introduction</strong>
-  </blockquote>
+<div class='space-y-3'>
+  <h3 class='text-[18px] font-medium leading-snug dark:text-neutral-300'>
+    <strong>📢 Introduction</strong>
+  </h3>
   <p>
     This website was meticulously crafted from the ground up using the Flask
     framework and started in January 2024. Ongoing development is underway to
@@ -23,34 +23,35 @@
   </p>
 </div>
 
-<div class='space-y-4'>
-  <blockquote>
-    <strong>Getting Started</strong>
-  </blockquote>
+<div class='space-y-3'>
+  <h3 class='text-[18px] font-medium leading-snug dark:text-neutral-300'>
+    <strong>🚀 Getting Started</strong>
+  </h3>
   <p>
     If you are interested in running this project on your local machine, you
     need to follow these steps:
   </p>
+
+  <div class='space-y-3'>
+    <h3 class='text-[18px] font-medium leading-snug dark:text-neutral-300'>
+      1. Clone using git
+    </h3>
+    <p>
+      Copy the <strong>unforaimcode.com</strong> repository from GitHub to your
+      computer by using the command below in the terminal or command prompt:
+    </p>
+
+  ```bash
+  git clone https://github.com/grimaimm/unforaimcode.com.git
+  ```
+
+  </div>
 </div>
 
-<div class='space-y-4'>
-  <h3 class='text-[18px] font-medium leading-snug dark:text-neutral-300'>
-    <strong>1. Clone using git</strong>
-  </h3>
-  <p>
-    Copy the <strong>unforaimcode.com</strong> repository from GitHub to your
-    computer by using the command below in the terminal or command prompt:
-  </p>
-
-```bash
-git clone https://github.com/grimaimm/unforaimcode.com.git
-```
-
-</div>
 
 <div class='space-y-3'>
   <h3 class='text-[18px] font-medium leading-snug dark:text-neutral-300'>
-    <strong>2. Navigate to Project Directory</strong>
+    2. Navigate to Project Directory
   </h3>
   <p>
     Open a terminal or command prompt, then go to the project directory you just cloned with the command:
@@ -64,7 +65,7 @@ cd unforaimcode.com
 
 <div class='space-y-3'>
   <h3 class='text-[18px] font-medium leading-snug dark:text-neutral-300'>
-    <strong>3. Setup Virtual Environment</strong>
+    3. Setup Virtual Environment
   </h3>
   <p>
     Create a Python virtual environment for this project to isolate its dependencies. Use the following command:
@@ -92,7 +93,7 @@ source venv/bin/activate    # macOS/Linux
 
 <div class='space-y-3'>
   <h3 class='text-[18px] font-medium leading-snug dark:text-neutral-300'>
-    <strong>4. Install Dependencies</strong>
+    4. Install Dependencies
   </h3>
   <p>
     Install all dependencies required by the Flask project. Make sure you are in a virtual environment before running this command:
@@ -106,7 +107,7 @@ pip install -r requirements.txt
 
 <div class='space-y-3'>
   <h3 class='text-[18px] font-medium leading-snug dark:text-neutral-300'>
-    <strong>5. Run the Flask Application</strong>
+    5. Run the Flask Application
   </h3>
   <p>
     Finally, run the Flask application with the command:
