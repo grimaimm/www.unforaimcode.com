@@ -48,8 +48,9 @@ const Calendar = ({ data }) => {
 
   return (
     <>
-      <div className='relative flex flex-col'>
-        <ul className='flex justify-end gap-[3px] overflow-hidden text-xs dark:text-zinc-400 md:justify-start'>
+      {/* <div className="overflow-x-auto w-full bg-red-400"> */}
+      <div className='no-scrollbar relative flex max-w-full flex-col overflow-x-auto'>
+        <ul className='flex gap-[3px] text-xs dark:text-zinc-400'>
           {months.map((month) => (
             <li
               key={month.firstDay}
@@ -61,7 +62,7 @@ const Calendar = ({ data }) => {
           ))}
         </ul>
 
-        <div className='flex justify-start gap-[3px] overflow-hidden'>
+        <div className='flex justify-start gap-[3px]'>
           {weeks?.map((week) => (
             <div key={week.firstDay}>
               {week.contributionDays.map((contribution) => {
@@ -144,6 +145,7 @@ const Calendar = ({ data }) => {
           {selectContribution?.date}
         </div>
       </div>
+      {/* </div> */}
     </>
   );
 };

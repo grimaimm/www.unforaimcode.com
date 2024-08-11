@@ -8,8 +8,8 @@ import Pagespeeds from './PageSpeed';
 const Dashboard = () => {
   return (
     <>
-      <Pagespeeds />
-      <PageBreakline className='mb-8 mt-10' />
+      {/* <Pagespeeds /> */}
+      {/* <PageBreakline className='mb-8 mt-10' /> */}
       <CodingActive />
       <PageBreakline className='mb-8 mt-10' />
       {/* <div className='space-y-10'> */}
