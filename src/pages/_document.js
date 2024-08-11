@@ -2,6 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 import { onestSans } from '@/styles/fonts';
 
 import defaultSEOConfig from '../../next-seo.config';
+import GoogleAdsense from '@/common/components/elements/GoogleAdsense';
 
 export default function Document() {
   return (
@@ -40,12 +41,10 @@ export default function Document() {
         {/* SEO and Structured Data */}
         <meta
           name='keywords'
-          content='unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python'
+          content='unforaimcode, unforaim webdev, aiiimmmm webdev, muhammad rahim, web developer, belajar javascript, belajar flask python'
         />
-        <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: defaultSEOConfig.jsonLD }}
-        />
+
+        <GoogleAdsense />
       </Head>
       <body className={onestSans.className}>
         <Main />
