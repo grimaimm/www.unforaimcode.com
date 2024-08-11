@@ -43,6 +43,16 @@ const defaultSEOConfig = {
     cardType: 'summary_large_image',
   },
   metaKeywords: metaKeywords,
+  jsonLD: `
+    {
+      "@context": "http://schema.org",
+      "@type": "website",
+      "url": "${canonicalUrl}",
+      "name": "Muhammad Rahim",
+      "logo": "https://res.cloudinary.com/aiiimmmm/image/upload/v1723344881/logo_tey4em.png"
+      "image": "${metaImage}"
+    }
+  `,
 };
 
 export default defaultSEOConfig;

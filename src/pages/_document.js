@@ -1,6 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import { onestSans } from '@/styles/fonts';
 
+import defaultSEOConfig from '../../next-seo.config';
+
 export default function Document() {
   return (
     <Html lang='en'>
@@ -24,9 +26,9 @@ export default function Document() {
           href='/favicon/favicon-16x16.png'
         />
         <link rel='manifest' href='/site.webmanifest' />
-        <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
-        <meta name='msapplication-TileColor' content='#603cba' />
-        <meta name='theme-color' content='#ffffff' />
+        <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#09090b' />
+        <meta name='msapplication-TileColor' content='#09090b' />
+        <meta name='theme-color' content='#09090b' />
 
         {/* Umami Analytics Script */}
         <script
@@ -40,16 +42,10 @@ export default function Document() {
           name='keywords'
           content='unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python'
         />
-        <script type='application/ld+json'>
-          {JSON.stringify({
-            '@context': 'http://schema.org',
-            '@type': 'Person',
-            name: 'Muhammad Rahim',
-            url: 'https://unforaimcode.vercel.app',
-            image:
-              'https://res.cloudinary.com/aiiimmmm/image/upload/v1722931611/metaImage-unforaimcode_o8qyur.png',
-          })}
-        </script>
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: defaultSEOConfig.jsonLD }}
+        />
       </Head>
       <body className={onestSans.className}>
         <Main />
