@@ -35,7 +35,7 @@ export const ServiceSection = ({ services }) => {
 export const ServiceSectionContactMe = () => {
   const router = useRouter();
   return (
-    <Card className='border border-zinc-200 bg-gradient-to-br from-white to-zinc-100 px-6 py-4 dark:border-zinc-700 dark:from-zinc-800 dark:to-zinc-900/50'>
+    <Card className='border border-zinc-200 bg-gradient-to-br from-white to-zinc-100 px-6 py-6 dark:border-zinc-700 dark:from-zinc-800 dark:to-zinc-900/50'>
       <div className='flex items-center space-x-2'>
         <RocketIcon size={20} />
         <h3>Lets work together!</h3>

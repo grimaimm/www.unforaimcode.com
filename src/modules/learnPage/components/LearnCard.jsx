@@ -25,7 +25,7 @@ const LearnCard = ({ learn }) => {
             className='rounded-t-xl object-cover'
           />
           <div className='absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 rounded-t-xl bg-black text-sm font-medium text-zinc-50 opacity-0 transition-opacity duration-300 group-hover:opacity-80'>
-            <span>View Project</span>
+            <span>View Lessons</span>
             <ViewIcon size={20} />
           </div>
         </div>
