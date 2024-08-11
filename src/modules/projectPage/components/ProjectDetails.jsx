@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { STACKS } from '@/common/components/partials/skills/components/Stack';
 import Tooltip from '@/common/components/elements/Tooltip';
-// import Image from '@/common/components/elements/Image';
 import ProjectLink from './ProjectLink';
 import CloudinaryImage from '@/common/components/elements/CloudinaryImage';
-import MDXComponents from '@/common/components/partials/blockcode/MDXComponents';
+import MDProjectContent from './MDProjectContent';
 
 const ProjectDetails = ({ project }) => {
   return (
@@ -31,9 +30,15 @@ const ProjectDetails = ({ project }) => {
         alt={project.title}
         className='rounded-xl'
       />
-      <div className='space-y-2 leading-[1.8] dark:text-zinc-300'>
-        <MDXComponents>{project.content}</MDXComponents>
-      </div>
+      {project.content ? (
+        <div className='space-y-6 leading-[1.8] dark:text-zinc-300'>
+          <MDProjectContent content={project.content} />
+        </div>
+      ) : (
+        <p className='text-zinc-500 dark:text-zinc-400'>
+          Content not available.
+        </p>
+      )}
     </div>
   );
 };

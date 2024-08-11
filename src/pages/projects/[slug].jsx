@@ -67,18 +67,18 @@ export async function getServerSideProps({ params }) {
     'src',
     'contents',
     'projects',
-    `${slug}.mdx`,
+    `${slug}.md`,
   );
-  let mdxContent = null;
 
   try {
-    const mdxFile = await fs.readFile(filePath, 'utf8');
-    mdxContent = mdxFile.toString();
+    // Cek apakah file ada
+    const content = await fs.readFile(filePath, 'utf8');
+    project.content = content;
   } catch (error) {
-    // console.error(`MDX file for blog slug "${slug}" not found.`);
+    // Jika file tidak ditemukan, jangan set project.content
+    project.content = null; // Atau hapus baris ini jika ingin tidak mengatur
   }
 
-  project.content = mdxContent;
   return { props: { project } };
 }
 
