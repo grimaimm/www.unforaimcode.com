@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://unforaimcode.vercel.app',
+  siteUrl: process.env.SITE_URL || 'https://www.aimdev.xyz',
   generateRobotsTxt: true,
 };

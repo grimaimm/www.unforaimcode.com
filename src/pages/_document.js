@@ -42,7 +42,7 @@ export default function Document() {
         {/* SEO and Structured Data */}
         <meta
           name='keywords'
-          content='unforaimcode, unforaim webdev, aiiimmmm webdev, muhammad rahim, web developer, belajar javascript, belajar flask python'
+          content='aimdev, aimdev.xyz, unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python'
         />
 
         <GoogleAdsense />

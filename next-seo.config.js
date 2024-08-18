@@ -1,10 +1,10 @@
-const canonicalUrl = 'htts://unforaimcode.vercel.app';
+const canonicalUrl = 'htts://www.aimdev.xyz';
 const metaImage =
   'https://res.cloudinary.com/aiiimmmm/image/upload/v1722931611/metaImage-unforaimcode_o8qyur.png';
 const metaDescription =
   'Experienced Web Developer skilled in ReactJS, TailwindCSS, JavaScript, and proficient in Flask and Python.';
 const metaKeywords =
-  'unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python';
+  'aimdev, aimdev.xyz, unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python';
 
 const defaultSEOConfig = {
   defaultTitle: 'Muhammad Rahim - Personal Website',
@@ -18,24 +18,24 @@ const defaultSEOConfig = {
     images: [
       {
         url: metaImage,
-        alt: 'unforaimcode.vercel.app og-image',
+        alt: 'www.aimdev.xyz og-image',
         width: 800,
         height: 600,
       },
       {
         url: metaImage,
-        alt: 'unforaimcode.vercel.app og-image',
+        alt: 'www.aimdev.xyz og-image',
         width: 1200,
         height: 630,
       },
       {
         url: metaImage,
-        alt: 'unforaimcode.vercel.app og-image',
+        alt: 'www.aimdev.xyz og-image',
         width: 1600,
         height: 900,
       },
     ],
-    site_name: 'unforaimcode.vercel.app',
+    site_name: 'www.aimdev.xyz',
   },
   twitter: {
     handle: '@handle',

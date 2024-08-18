@@ -66,7 +66,7 @@ const LearnSlug = ({ learn }) => {
   const PAGE_DESCRIPTION =
     learn.description || 'Details of the selected Learn post.';
 
-  const canonicalUrl = `htts://unforaimcode.vercel.app/learn/${learn?.slug || ''}`;
+  const canonicalUrl = `htts://www.aimdev.xyz/learn/${learn?.slug || ''}`;
 
   return (
     <>

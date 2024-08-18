@@ -90,7 +90,7 @@ export const MENU_ITEMS = [
 export const EXTERNAL_LINKS = [
   {
     title: 'Analytics',
-    href: 'https://cloud.umami.is/share/BsBvPpHKcSHo2W3e/unforaimcode.vercel.app',
+    href: 'https://cloud.umami.is/share/BsBvPpHKcSHo2W3e/www.aimdev.xyz',
     icon: <AnalyticsIcon size={iconSize} />,
     isShow: true,
     isExternal: true,

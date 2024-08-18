@@ -14,7 +14,7 @@ const BlogSlugDetailPage = ({ blog }) => {
     return <div>No blog found</div>;
   }
 
-  const canonicalUrl = `htts://unforaimcode.vercel.app/blog/${blog.slug || ''}`;
+  const canonicalUrl = `htts://www.aimdev.xyz/blog/${blog.slug || ''}`;
 
   return (
     <>

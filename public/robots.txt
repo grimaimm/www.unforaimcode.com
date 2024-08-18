@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://unforaimcode.vercel.app
+Host: https://www.aimdev.xyz
 
 # Sitemaps
-Sitemap: https://unforaimcode.vercel.app/sitemap.xml
+Sitemap: https://www.aimdev.xyz/sitemap.xml

@@ -12,7 +12,7 @@ const ProjectSlugDetailPage = ({ project }) => {
   const PAGE_TITLE = project?.title || 'Project not found';
   const PAGE_DESCRIPTION = project?.description || '';
 
-  const canonicalUrl = `htts://unforaimcode.vercel.app/projects/${project?.slug || ''}`;
+  const canonicalUrl = `htts://www.aimdev.xyz/projects/${project?.slug || ''}`;
 
   return (
     <>
