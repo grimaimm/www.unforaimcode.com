@@ -1,12 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import { onestSans } from '@/styles/fonts';
 
-import defaultSEOConfig from '../../next-seo.config';
 import GoogleAdsense from '@/common/components/elements/GoogleAdsense';
-import {
-  GoogleTagManagerHead,
-  GoogleTagManagerBody,
-} from '@/common/components/elements/GTM';
 
 export default function Document() {
   return (
@@ -43,7 +38,6 @@ export default function Document() {
           data-website-id='781f8ae1-ebd5-4afa-b05c-fe36d9099c05'
         ></script>
 
-        {/* SEO and Structured Data */}
         <meta
           name='keywords'
           content='aimdev, aimdev.xyz, aimdev xyz, unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python'
@@ -54,11 +48,8 @@ export default function Document() {
           name='google-site-verification'
           content='vIlIkVTp8dFcPk9yxsUAMF2aJ7IqwD-HtbinaKc4UpA'
         />
-
-        <GoogleTagManagerHead />
       </Head>
       <body className={onestSans.className}>
-        <GoogleTagManagerBody />
         <Main />
         <NextScript />
       </body>
