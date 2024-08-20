@@ -4,7 +4,7 @@ const metaImage =
 const metaDescription =
   'Experienced Web Developer skilled in ReactJS, TailwindCSS, JavaScript, and proficient in Flask and Python.';
 const metaKeywords =
-  'aimdev, aimdev.xyz, unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python';
+  'aimdev, aimdev.xyz, aimdev xyz, unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python';
 
 const defaultSEOConfig = {
   defaultTitle: 'Muhammad Rahim - Personal Website',
@@ -35,7 +35,7 @@ const defaultSEOConfig = {
         height: 900,
       },
     ],
-    site_name: 'www.aimdev.xyz',
+    site_name: 'Aim Dev',
   },
   twitter: {
     handle: '@handle',
@@ -46,7 +46,7 @@ const defaultSEOConfig = {
   jsonLD: `
     {
       "@context": "http://schema.org",
-      "@type": "website",
+      "@type": "Person",
       "url": "${canonicalUrl}",
       "name": "Muhammad Rahim",
       "logo": "https://res.cloudinary.com/aiiimmmm/image/upload/v1723344881/logo_tey4em.png"
