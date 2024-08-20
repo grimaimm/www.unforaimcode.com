@@ -66,7 +66,7 @@ const LearnSlug = ({ learn }) => {
   const PAGE_DESCRIPTION =
     learn.description || 'Details of the selected Learn post.';
 
-  const canonicalUrl = `htts://www.aimdev.xyz/learn/${learn?.slug || ''}`;
+  const canonicalUrl = `https://www.aimdev.xyz/learn/${learn?.slug || ''}`;
 
   return (
     <>

@@ -7,7 +7,7 @@ function generateStructuredData() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Muhammad Rahim',
-    url: 'htts://www.aimdev.xyz',
+    url: 'https://www.aimdev.xyz',
     image:
       'https://res.cloudinary.com/aiiimmmm/image/upload/v1722931611/metaImage-unforaimcode_o8qyur.png',
     jobTitle: 'Web Developer',

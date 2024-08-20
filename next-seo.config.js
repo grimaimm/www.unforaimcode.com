@@ -1,4 +1,4 @@
-const canonicalUrl = 'htts://www.aimdev.xyz';
+const canonicalUrl = 'https://www.aimdev.xyz';
 const metaImage =
   'https://res.cloudinary.com/aiiimmmm/image/upload/v1722931611/metaImage-unforaimcode_o8qyur.png';
 const metaDescription =
