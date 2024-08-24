@@ -4,7 +4,7 @@ const metaImage =
 const metaDescription =
   'Experienced Web Developer skilled in ReactJS, TailwindCSS, JavaScript, and proficient in Flask and Python.';
 const metaKeywords =
-  'aimdev, aimdev.xyz, aimdev xyz, unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python';
+  'aimdev, aimm dev, aimdev.xyz, aimdev xyz, unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python';
 
 const defaultSEOConfig = {
   defaultTitle: 'Muhammad Rahim - Personal Website',

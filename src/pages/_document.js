@@ -40,14 +40,14 @@ export default function Document() {
 
         <meta
           name='keywords'
-          content='aimdev, aimdev.xyz, aimdev xyz, unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python'
+          content='aimdev, aimm dev, aimdev.xyz, aimdev xyz, unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python'
         />
 
         <GoogleAdsense />
-        <meta
+        {/* <meta
           name='google-site-verification'
           content='vIlIkVTp8dFcPk9yxsUAMF2aJ7IqwD-HtbinaKc4UpA'
-        />
+        /> */}
       </Head>
       <body className={onestSans.className}>
         <Main />
