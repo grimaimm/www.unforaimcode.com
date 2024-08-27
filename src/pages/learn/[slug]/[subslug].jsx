@@ -62,7 +62,7 @@ const LessonSlug = ({
     learn && currentIndex > 0 ? learn.content[currentIndex - 1].title : '';
 
   const PAGE_DESCRIPTION = `Details of the lesson: ${lessonDetail.title}`;
-  const canonicalUrl = `https://www.aimdev.xyz/learn/${learn?.slug || ''}/${lessonDetail?.subslug || ''}`;
+  const canonicalUrl = `https://aimdev.xyz/learn/${learn?.slug || ''}/${lessonDetail?.subslug || ''}`;
 
   return (
     <>

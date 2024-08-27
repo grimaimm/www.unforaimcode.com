@@ -1,4 +1,4 @@
-const canonicalUrl = 'https://www.aimdev.xyz';
+const canonicalUrl = 'https://aimdev.xyz';
 const metaImage =
   'https://res.cloudinary.com/aiiimmmm/image/upload/v1722931611/metaImage-unforaimcode_o8qyur.png';
 const metaDescription =
@@ -19,19 +19,19 @@ const defaultSEOConfig = {
     images: [
       {
         url: metaImage,
-        alt: 'www.aimdev.xyz og-image',
+        alt: 'aimdev.xyz og-image',
         width: 800,
         height: 600,
       },
       {
         url: metaImage,
-        alt: 'www.aimdev.xyz og-image',
+        alt: 'aimdev.xyz og-image',
         width: 1200,
         height: 630,
       },
       {
         url: metaImage,
-        alt: 'www.aimdev.xyz og-image',
+        alt: 'aimdev.xyz og-image',
         width: 1600,
         height: 900,
       },

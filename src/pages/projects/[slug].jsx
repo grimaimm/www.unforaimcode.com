@@ -12,7 +12,7 @@ const ProjectSlugDetailPage = ({ project }) => {
   const PAGE_TITLE = project?.title || 'Project not found';
   const PAGE_DESCRIPTION = project?.description || '';
 
-  const canonicalUrl = `https://www.aimdev.xyz/projects/${project?.slug || ''}`;
+  const canonicalUrl = `https://aimdev.xyz/projects/${project?.slug || ''}`;
 
   return (
     <>

@@ -9,7 +9,7 @@ import * as React from 'react';
 import dynamic from 'next/dynamic';
 import { SessionProvider } from 'next-auth/react';
 import { useMediaQuery } from 'react-responsive';
-import { DefaultSeo } from 'next-seo';
+import { ArticleJsonLd, DefaultSeo } from 'next-seo';
 import { firaCode, jakartaSans, onestSans, soraSans } from '@/styles/fonts';
 import { ThemeProvider } from '@/common/context/ThemeContext';
 import { CommandPaletteProvider } from '@/common/context/CommandPaletteContext';
@@ -82,6 +82,16 @@ export default function App({
         `}
       </style>
       <DefaultSeo {...defaultSEOConfig} />
+      <ArticleJsonLd
+        type='Person'
+        url='https://aimdev.xyz'
+        title='Web Developer'
+        images={[
+          'https://res.cloudinary.com/aiiimmmm/image/upload/v1722931611/metaImage-unforaimcode_o8qyur.png',
+        ]}
+        authorName='Muhammad Rahim'
+        description='Next SEO packages simplifies the SEO management in Next Apps with less configurations'
+      />
       <SessionProvider session={session}>
         <LayoutProvider>
           <ThemeProvider>

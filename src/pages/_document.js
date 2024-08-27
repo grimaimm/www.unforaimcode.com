@@ -44,10 +44,6 @@ export default function Document() {
         />
 
         <GoogleAdsense />
-        {/* <meta
-          name='google-site-verification'
-          content='vIlIkVTp8dFcPk9yxsUAMF2aJ7IqwD-HtbinaKc4UpA'
-        /> */}
       </Head>
       <body className={onestSans.className}>
         <Main />
