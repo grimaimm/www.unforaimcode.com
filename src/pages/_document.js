@@ -43,6 +43,11 @@ export default function Document() {
           content='aimdev, aimm dev, aimdev.xyz, aimdev xyz, unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python'
         />
 
+        <meta
+          name='google-site-verification'
+          content='vIlIkVTp8dFcPk9yxsUAMF2aJ7IqwD-HtbinaKc4UpA'
+        />
+
         <GoogleAdsense />
       </Head>
       <body className={onestSans.className}>
