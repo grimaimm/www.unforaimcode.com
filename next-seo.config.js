@@ -1,10 +1,8 @@
 const canonicalUrl = 'https://aimdev.xyz';
 const metaImage =
-  'https://res.cloudinary.com/aiiimmmm/image/upload/v1722931611/metaImage-unforaimcode_o8qyur.png';
+  'https://res.cloudinary.com/aiiimmmm/image/upload/v1725350270/Meta_Image_zhzivv.png';
 const metaDescription =
   'Experienced Web Developer skilled in ReactJS, TailwindCSS, JavaScript, and proficient in Flask and Python.';
-const metaKeywords =
-  'aimdev, aimm dev, aimdev.xyz, aimdev xyz, unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python';
 
 const defaultSEOConfig = {
   defaultTitle: 'Muhammad Rahim - Personal Website',
@@ -43,7 +41,6 @@ const defaultSEOConfig = {
     site: '@site',
     cardType: 'summary_large_image',
   },
-  metaKeywords: metaKeywords,
 };
 
 export default defaultSEOConfig;

@@ -67,7 +67,7 @@ const LessonSlug = ({
   return (
     <>
       <NextSeo
-        title={`${lessonDetail?.title} - Project Muhammad Rahim`}
+        title={`${lessonDetail?.title} - Learn Muhammad Rahim`}
         description={PAGE_DESCRIPTION}
         canonical={canonicalUrl}
         openGraph={{
