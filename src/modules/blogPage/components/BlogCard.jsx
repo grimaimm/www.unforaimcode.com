@@ -7,7 +7,7 @@ import CloudinaryImage from '@/common/components/elements/CloudinaryImage';
 
 const BlogCard = ({ blog }) => {
   const trimmedTitle =
-    blog.title.slice(0, 50) + (blog.title.length > 50 ? '...' : '');
+    blog.title.slice(0, 55) + (blog.title.length > 55 ? '...' : '');
   const trimmedDescription =
     blog.description.slice(0, 80) + (blog.description.length > 80 ? '...' : '');
 

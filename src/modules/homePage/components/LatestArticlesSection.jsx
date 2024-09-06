@@ -58,9 +58,9 @@ const LatestArticlesSection = () => {
       </div>
       <div className='latest-article-card scrollbar-hide no-scrollbar mt-2 flex flex-row space-x-3 overflow-y-hidden overflow-x-scroll pt-2'>
         {isLoading
-          ? [1, 2].map((item) => <LoadingArticlesCard key={item} />)
+          ? [1, 2, 3].map((item) => <LoadingArticlesCard key={item} />)
           : blogs
-              .slice(0, 2)
+              .slice(0, 3)
               .map((blog, index) => (
                 <LatestArticlesCard key={index} blog={blog} />
               ))}

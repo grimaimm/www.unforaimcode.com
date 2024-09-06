@@ -15,10 +15,10 @@ const MDBlogContent = ({ content }) => {
         // ===== Image component ===== //
         img: ({ node, ...props }) => (
           <Image
-            width={50}
-            height={50}
+            width={1920}
+            height={1080}
             alt='image'
-            className='rounded-xl'
+            className='w-full rounded-xl'
             {...props}
           />
         ),
@@ -26,7 +26,7 @@ const MDBlogContent = ({ content }) => {
         // ===== Link component ===== //
         a: ({ node, ...props }) => (
           <a
-            className='cursor-pointer text-teal-500 hover:text-teal-400 hover:underline'
+            className='cursor-pointer text-indigo-600 hover:text-indigo-400 hover:underline dark:text-indigo-400 dark:hover:text-indigo-300'
             {...props}
           />
         ),
@@ -67,7 +67,7 @@ const MDBlogContent = ({ content }) => {
             />
           ) : (
             <code
-              className='rounded-md bg-zinc-200 px-2 py-1 text-[14px] font-light text-sky-600 dark:bg-zinc-700 dark:text-sky-300'
+              className='rounded-md bg-zinc-200 px-2 py-1 text-[14px] font-light text-indigo-600 dark:bg-zinc-800 dark:text-indigo-300'
               {...props}
             >
               {children}

@@ -140,7 +140,7 @@ const BlogDetails = ({ blog }) => {
         height={(1200 * 2) / 4.9}
         className='rounded-xl max-sm:h-[176px]'
       />
-      <section className='mt-6 md:mt-6 lg:grid lg:grid-cols-[auto,250px] lg:gap-8'>
+      <section className='mt-6 md:mt-6 lg:grid lg:grid-cols-[74%,26%] lg:gap-8'>
         <main>
           <div className='space-y-6 leading-[1.8] dark:text-zinc-300'>
             <MDBlogContent content={blog.content} />
