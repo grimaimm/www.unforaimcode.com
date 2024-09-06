@@ -89,41 +89,9 @@ def home():
   </p>
   </div>
 
-  <div class="space-y-3 pb-4">
-    <p><strong>3. Add HTML Template for Home Page</strong></p>
-    <p>Fill the <code>home.html</code> template in <code>app/templates/home-page/</code> :</p>
-
-```python
-{% extends '_layout/base.html' %}
-
-{% block content %}
-  <h1>Welcome to the Home Page!</h1>
-  <p>This is the main landing page of our web application.</p>
-{% endblock %}
-```
-
-  <strong>Explanation:</strong>
-
-  <ol className="list-disc space-y-3 pb-2 pl-10">
-  <li>
-    <p>This template inherits the basic structure from <code>base.html</code>.</p>
-  </li>
-  <li>
-    <p>Main content is placed within <code>{% block content %}</code> to maintain layout consistency.</p>
-  </li>
-  </ol>
-
-  <strong>Screenshot:</strong>
-  <p class="rounded-xl w-full border border-zinc-200 dark:border-zinc-800">
-    <img 
-      src="https://res.cloudinary.com/aiiimmmm/image/upload/v1725616020/Lessons-4-03_y7jtsa.png" 
-      alt="Lessons-4-03" 
-    />
-  </p>
-  </div>
 
   <div class="space-y-3 pb-4">
-    <p><strong>4. Add Error Handlers in <code>error_handlers.py</code></strong></p>
+    <p><strong>3. Add Error Handlers in <code>error_handlers.py</code></strong></p>
     <p>Create error handlers in <code>app/routes/error_handlers.py</code> :</p>
 
 ```python
@@ -156,93 +124,6 @@ def register_error_handlers(app):
     <img 
       src="https://res.cloudinary.com/aiiimmmm/image/upload/v1725616022/Lessons-4-04_wslzg4.png" 
       alt="Lessons-4-04" 
-    />
-  </p>
-  </div>
-
-
-  <div class="space-y-3 pb-4">
-    <p><strong>5. Basic Template <code>base.html</code></strong></p>
-    <p>The <code>base.html</code> template in <code>app/templates/_layouts/</code> is used as the base structure for all pages:</p>
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flask App</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="{{ url_for('home.home') }}">Home</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>{% block content %} {% endblock %}</main>
-
-    <footer>
-      <p>&copy; 2024 My Flask App</p>
-    </footer>
-
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-  </body>
-</html>
-```
-
-  <strong>Explanation:</strong>
-
-  <ol className="list-disc space-y-3 pb-2 pl-10">
-  <li>
-    <p>This template serves as the base for all pages, providing fundamental HTML structure such as header, footer, and main content.</p>
-  </li>
-  </ol>
-
-  <strong>Screenshot:</strong>
-  <p class="rounded-xl w-full border border-zinc-200 dark:border-zinc-800">
-    <img 
-      src="https://res.cloudinary.com/aiiimmmm/image/upload/v1725616023/Lessons-4-05_vdcc0o.png" 
-      alt="Lessons-4-05" 
-    />
-  </p>
-  </div>
-
-
-  <div class="space-y-3 pb-4">
-    <p><strong>6. Run the Application</strong></p>
-    <p>Finally, run your application using <code>run.py</code>:</p>
-
-```python
-from app import create_app
-
-app = create_app()
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-```
-
-  <strong>Explanation:</strong>
-
-  <ol className="list-disc space-y-3 pb-2 pl-10">
-  <li>
-    <p>The application runs in debug mode, which helps you see errors directly during development.</p>
-  </li>
-  </ol>
-
-  <strong>Screenshot:</strong>
-  <p class="rounded-xl w-full border border-zinc-200 dark:border-zinc-800">
-    <img 
-      src="https://res.cloudinary.com/aiiimmmm/image/upload/v1725616025/Lessons-4-06_dzv2d8.png" 
-      alt="Lessons-4-06" 
     />
   </p>
   </div>

@@ -62,14 +62,15 @@ mkdir -p app/routes/home
 mkdir -p app/static/css app/static/js app/static/img
 mkdir -p app/templates/_includes app/templates/_layout app/templates/home-page
 mkdir instance
+```
 
+```bash
 # Membuat File:
 touch app/__init__.py app/routes/__init__.py app/routes/home/__init__.py app/routes/home/home_routes.py app/routes/error_handlers.py
 touch app/static/css/style.css app/static/js/script.js
 touch app/templates/_layout/base.html app/templates/home-page/home.html app/templates/index.html app/templates/error.html
 touch app/utils.py instance/config.py .gitignore requirements.txt run.py .env
 ```
-
 </div>
 
 <div class="space-y-3">

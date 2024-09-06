@@ -45,7 +45,7 @@ python app.py
   </li>
 
   <li>
-    <p>Open a web browser and navigate to <code>http://127.0.0.1:5000</code>. You should see the message <code>"Hello, World!"</code> displayed on the screen.</p>
+    <p>Open a web browser and navigate to <a>http://127.0.0.1:5000</a>. You should see the message <code>"Hello, World!"</code> displayed on the screen.</p>
   </li>
   </ol>
 </div>
