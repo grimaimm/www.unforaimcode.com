@@ -15,10 +15,10 @@ const MDLessonsContent = ({ markdownContent }) => {
         // ===== Image component ===== //
         img: ({ node, ...props }) => (
           <Image
-            width={50}
-            height={50}
+            width={1920}
+            height={1080}
             alt='image'
-            className='rounded-xl'
+            className='w-full rounded-xl'
             {...props}
           />
         ),

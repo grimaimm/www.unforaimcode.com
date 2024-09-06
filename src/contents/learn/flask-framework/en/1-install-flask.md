@@ -6,52 +6,55 @@
 </div>
 
 <div class="space-y-3">
-  <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Steps to Install Flask using pip</strong></h3>
+  <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Steps to Install Flask</strong></h3>
   <ol className="list-decimal space-y-3 pb-2 pl-10">
   <li>
-    <p>Open a terminal or command prompt on your computer.</p>
+    <p>Create a Virtual Environment (Optional but Recommended):</p>
+    <p>Creating a virtual environment helps keep your project clean and isolated from other Python installations.</p>
     
 ```bash
-# Ensure pip is uptodate
-pip install --upgrade pip
+python -m venv .venv
 ```
-  </li>
 
+  <p><strong>Activate the virtual environment:</strong></p>
+  <ol className="list-disc space-y-3 pb-2 pl-10">
   <li>
-    <p>Install Flask by typing the following command:</p>
+    <p>On Windows:</p>
 
 ```bash
-pip install Flask
+.venv\Scripts\activate
 ```
 
   </li>
   <li>
-    <p>Wait for the installation process to complete. Pip will download and install Flask along with all its dependencies.</p>
+    <p>On MacOS/Linux:</p>
+
+```bash
+source .venv/bin/activate
+```
+
+  </li>
+  </ol>
+  </li>
+
+  <li>
+    <p>Install Flask:</p>
+    <p>After activating the virtual environment, install Flask with the command:</p>
+    
+```bash
+pip install flask
+```
   </li>
   </ol>
 </div>
 
 <div class="space-y-3">
-  <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Verification of Installation</strong></h3>
-  <ol className="list-decimal space-y-3 pb-2 pl-10">
-  <li>
-    <p>Type <code>python</code> in the terminal or command prompt to enter Python mode.</p>
-    
-```bash
-python
-```
-  </li>
-
-  <li>
-    <p>Type <code>import flask</code> and press Enter.</p>
-
-```bash
-import flask
-```
-
-  </li>
-  <li>
-    <p>If there are no error messages, this indicates that Flask has been successfully installed.</p>
-  </li>
-  </ol>
+  <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Screenshot</strong></h3>
+  <p class="rounded-xl w-full border border-zinc-200 dark:border-zinc-800">
+    <img 
+      src="https://res.cloudinary.com/aiiimmmm/image/upload/v1725611982/Lessons-1_iphcnz.png" 
+      alt="Lessons-1" 
+    />
+  </p>
+  <p>If there are no error messages, this indicates that Flask has been successfully installed.</p>
 </div>

@@ -6,52 +6,55 @@
 </div>
 
 <div class="space-y-3">
-  <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Langkah-langkah Menginstal Flask menggunakan pip</strong></h3>
+  <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Langkah-langkah Menginstal Flask</strong></h3>
   <ol className="list-decimal space-y-3 pb-2 pl-10">
   <li>
-    <p>Buka terminal atau command prompt di komputer kamu.</p>
+    <p>Buat Virtual Environment (Opsional tapi Disarankan):</p>
+    <p>Membuat virtual environment membantu menjaga proyek kamu tetap bersih dan terisolasi dari instalasi Python lainnya.</p>
     
 ```bash
-# Pastikan pip sudah versi terbaru
-pip install --upgrade pip
+python -m venv .venv
 ```
-  </li>
 
+  <p><strong>Aktifkan virtual environment:</strong></p>
+  <ol className="list-disc space-y-3 pb-2 pl-10">
   <li>
-    <p>Instal Flask dengan mengetikkan perintah berikut:</p>
+    <p>Di Windows:</p>
 
 ```bash
-pip install Flask
+.venv\Scripts\activate
 ```
 
   </li>
   <li>
-    <p>Tunggu sampai proses instalasi selesai. Pip akan mengunduh dan menginstal Flask beserta semua dependensinya.</p>
+    <p>Di MacOS/Linux:</p>
+
+```bash
+source .venv/bin/activate
+```
+
+  </li>
+  </ol>
+  </li>
+
+  <li>
+    <p>Install Flask:</p>
+    <p>Setelah mengaktifkan virtual environment, instal Flask dengan perintah:</p>
+    
+```bash
+pip install flask
+```
   </li>
   </ol>
 </div>
 
 <div class="space-y-3">
-  <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Verifikasi Instalasi</strong></h3>
-  <ol className="list-decimal space-y-3 pb-2 pl-10">
-  <li>
-    <p>Ketik <code>python</code> di terminal atau command prompt untuk masuk ke mode Python.</p>
-    
-```bash
-python
-```
-  </li>
-
-  <li>
-    <p>Ketik <code>import flask</code> dan tekan Enter.</p>
-
-```bash
-import flask
-```
-
-  </li>
-  <li>
-    <p>Jika tidak ada pesan error, berarti Flask sudah berhasil diinstal.</p>
-  </li>
-  </ol>
+  <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Tangkapan Layar</strong></h3>
+  <p class="rounded-xl w-full border border-zinc-200 dark:border-zinc-800">
+    <img 
+      src="https://res.cloudinary.com/aiiimmmm/image/upload/v1725611982/Lessons-1_iphcnz.png" 
+      alt="Lessons-1"
+    />
+  </p>
+  <p>Jika tidak ada pesan error, berarti Flask sudah berhasil diinstal.</p>
 </div>

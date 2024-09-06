@@ -1,24 +1,10 @@
 <div class="space-y-3">
   <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Membuat File Python Pertama untuk Aplikasi Flask</strong></h3>
-  <ol className="list-decimal space-y-3 pb-2 pl-10">
-  <li>
-    <p>Buat direktori baru untuk proyek Flask kamu.</p>
-    
-```bash
-mkdir my_flask_app
-cd my_flask_app
-```
-  </li>
-
-  <li>
     <p>Buat file Python baru dengan nama <code>app.py</code> .</p>
 
 ```bash
 touch app.py
 ```
-
-  </li>
-  </ol>
 </div>
 
 <div class="space-y-3">
@@ -62,4 +48,14 @@ python app.py
     <p>Buka browser web dan navigasikan ke <code>http://127.0.0.1:5000</code>. Kamu seharusnya melihat pesan <code>"Hello, World!"</code> ditampilkan di layar.</p>
   </li>
   </ol>
+</div>
+
+<div class="space-y-3">
+  <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Tangkapan Layar</strong></h3>
+  <p class="rounded-xl w-full border border-zinc-200 dark:border-zinc-800">
+    <img 
+      src="https://res.cloudinary.com/aiiimmmm/image/upload/v1725611982/Lessons-2-02_ilddw0.png" 
+      alt="Lessons-2" 
+    />
+  </p>
 </div>
