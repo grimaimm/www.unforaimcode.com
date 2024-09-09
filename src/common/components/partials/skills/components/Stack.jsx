@@ -16,6 +16,8 @@ import {
   SiFastapi,
   SiFlask,
   SiSocketdotio,
+  SiPhp,
+  SiLaravel,
 } from 'react-icons/si';
 import { FaRobot } from 'react-icons/fa';
 import {
@@ -54,4 +56,6 @@ export const STACKS = {
     <SiSocketdotio size={iconSize} className='text-black dark:text-white' />
   ),
   TailwindCSS: <SiTailwindcss size={iconSize} className='text-cyan-300' />,
+  PHP: <SiPhp size={iconSize} className='text-[#484C89] dark:text-[#777BB3]' />,
+  Laravel: <SiLaravel size={iconSize} className='text-[#fb503b]' />,
 };
