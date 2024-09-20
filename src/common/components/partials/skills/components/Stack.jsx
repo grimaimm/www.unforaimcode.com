@@ -24,8 +24,8 @@ import {
   PythonIcon,
   SQLiteIcon,
   MySQLIcon,
-  FilamentPHPIcon,
 } from '@/common/components/elements/Icons';
+import { PiLightbulbFilament as FilamentPHPIcon } from 'react-icons/pi';
 
 const iconSize = '100%';
 
@@ -59,5 +59,5 @@ export const STACKS = {
   TailwindCSS: <SiTailwindcss size={iconSize} className='text-cyan-300' />,
   PHP: <SiPhp size={iconSize} className='text-[#484C89] dark:text-[#777BB3]' />,
   Laravel: <SiLaravel size={iconSize} className='text-[#fb503b]' />,
-  Filament: <FilamentPHPIcon size={iconSize} />,
+  Filament: <FilamentPHPIcon size={iconSize} className='text-[#ffa434]' />,
 };
