@@ -54,8 +54,9 @@ with app.app_context():
 <div class="space-y-3">
   <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>2. Setup App</strong></h3>
   <p>
-    In <code>app.py</code>, we have <code>test_connection()</code> to check the database connection, and we also have code to auto-create tables if they don’t exist in the database.
+    In <code>app.py</code>, we use <code>test_connection()</code> to open a connection to the database with <code>db.engine.connect()</code> without needing any <code>commit()</code> or query. This is enough to check if the connection is successful or fails.
   </p>
+  
   
 ```py
 from config import app, db
@@ -63,7 +64,7 @@ from config import app, db
 def test_connection():
     try:
         with app.app_context():
-            db.session.commit()
+            db.engine.connect()
         print("Database connection successful!")
     except Exception as e:
         print("Database connection failed:", e)
@@ -90,7 +91,7 @@ if __name__ == "__main__":
   <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Screenshot</strong></h3>
   <p class="rounded-xl w-full border border-zinc-200 dark:border-zinc-800">
     <img 
-      src="https://res.cloudinary.com/aiiimmmm/image/upload/v1731237157/Screenshot_2024-11-10_180935_qjva7s.png" 
+      src="https://res.cloudinary.com/aiiimmmm/image/upload/v1731298453/Screenshot_2024-11-11_111331_r1mhge.png" 
       alt="Lessons-4-01"
     />
   </p>

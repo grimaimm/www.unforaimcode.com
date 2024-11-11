@@ -54,7 +54,7 @@ with app.app_context():
 <div class="space-y-3">
   <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>2. Setup App</strong></h3>
   <p>
-    Di <code>app.py</code>, kita pake <code>test_connection()</code> buat ngecek koneksi ke database, dan kita juga udah ada code buat bikin tabel secara otomatis kalau belum ada di database.
+    Di <code>app.py</code>, kita pakai <code>test_connection()</code> buat buka koneksi ke database pakai <code>db.engine.connect()</code> tanpa perlu <code>commit()</code> atau query apapun. Ini udah cukup buat cek koneksi berhasil atau gagal.
   </p>
   
 ```py
@@ -63,7 +63,7 @@ from config import app, db
 def test_connection():
     try:
         with app.app_context():
-            db.session.commit()
+            db.engine.connect()
         print("Database connection successful!")
     except Exception as e:
         print("Database connection failed:", e)
@@ -90,7 +90,7 @@ if __name__ == "__main__":
   <h3 class="text-lg leading-snug dark:text-zinc-300"><strong>Screenshot</strong></h3>
   <p class="rounded-xl w-full border border-zinc-200 dark:border-zinc-800">
     <img 
-      src="https://res.cloudinary.com/aiiimmmm/image/upload/v1731237157/Screenshot_2024-11-10_180935_qjva7s.png" 
+      src="https://res.cloudinary.com/aiiimmmm/image/upload/v1731298453/Screenshot_2024-11-11_111331_r1mhge.png" 
       alt="Lessons-4-01"
     />
   </p>
