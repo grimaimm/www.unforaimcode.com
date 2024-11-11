@@ -38,7 +38,7 @@ DB_PORT = "3306"
 DB_NAME = "db_restapi_project"
 
 app.config["SECRET_KEY"] = os.urandom(32).hex()
-app.config["SQLALCHEMY_DATABASE_URI"] = f"{PYMYSQL}{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+app.config["SQLALCHEMY_DATABASE_URI"] = f"{LARAGON_CONNECTOR}{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
