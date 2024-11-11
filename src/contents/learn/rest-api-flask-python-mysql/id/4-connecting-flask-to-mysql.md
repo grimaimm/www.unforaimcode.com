@@ -12,9 +12,9 @@
   
   <p><b>Note:</b></p>
   <ul className="list-disc space-y-3 pb-2 pl-10">
-    <li>Jika kamu menggunakan XAMPP, pake <code>XAMPP_CONNECTOR</code>.</li>
-    <li>Jika kamu menggunakan Laragon, pake <code>LARAGON_CONNECTOR</code>.</li>
-    <li>Disini saya pake Laragon</li>
+    <li>Jika kamu menggunakan XAMPP, pakai <code>XAMPP_CONNECTOR</code>.</li>
+    <li>Jika kamu menggunakan Laragon, pakai <code>LARAGON_CONNECTOR</code>.</li>
+    <li>Disini saya pakai Laragon</li>
   </ul>
   
   
@@ -25,10 +25,10 @@ from flask import Flask
 
 app = Flask(__name__)
 
-# jika pake XAMPP
+# jika pakai XAMPP
 XAMPP_CONNECTOR = "mysql+mysqlconnector://"
 
-# jika pake Laragon
+# jika pakai Laragon
 LARAGON_CONNECTOR = "mysql+pymysql://"
 
 DB_USERNAME = "root"
