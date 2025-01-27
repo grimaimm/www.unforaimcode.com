@@ -3,12 +3,10 @@ import { GITHUB_ACCOUNTS } from '@/common/constant/Github';
 
 import Contributions from './Contributions';
 import CodingActive from './CodingActive';
-import Pagespeeds from './PageSpeed';
 
 const Dashboard = () => {
   return (
     <>
-      {/* <Pagespeeds /> */}
       {/* <PageBreakline className='mb-8 mt-10' /> */}
       <CodingActive />
       <PageBreakline className='mb-8 mt-10' />
@@ -23,8 +21,6 @@ const Dashboard = () => {
           />
         ),
       )}
-      {/* </div> */}
-      {/* <PageBreakline className='mb-8 mt-10' /> */}
     </>
   );
 };
