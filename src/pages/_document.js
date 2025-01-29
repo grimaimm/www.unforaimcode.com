@@ -57,6 +57,19 @@ export default function Document() {
           content='vIlIkVTp8dFcPk9yxsUAMF2aJ7IqwD-HtbinaKc4UpA'
         />
 
+        <link
+          rel='preload'
+          href='https://aimdev.xyz/images/Me/metaImage-aimdev.png'
+          as='image'
+          type='image/png'
+          crossOrigin='anonymous'
+        />
+
+        <meta
+          property='og:image'
+          content='https://aimdev.xyz/images/Me/metaImage-aimdev.png'
+        />
+
         <GoogleAdsense />
       </Head>
       <body className={onestSans.className}>
