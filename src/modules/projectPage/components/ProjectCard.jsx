@@ -39,7 +39,7 @@ const ProjectCard = ({ project }) => {
               {project.title}
             </div>
           </div>
-          <p className='text-[15px] leading-relaxed text-zinc-700 dark:text-zinc-400'>
+          <p className='line-clamp-2 text-ellipsis text-[15px] leading-relaxed text-zinc-700 dark:text-zinc-400'>
             {project.description}
           </p>
           <div className='flex flex-wrap items-center gap-3 pt-2'>
