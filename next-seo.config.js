@@ -1,6 +1,7 @@
 const canonicalUrl = 'https://aimdev.xyz';
-const metaImage =
+const metaImageV1 =
   'https://res.cloudinary.com/aiiimmmm/image/upload/v1725350270/Meta_Image_zhzivv.png';
+const metaImageV2 = 'https://aimdev.xyz/images/Me/metaImage-aimdev.png';
 const metaDescription =
   'Experienced Web Developer skilled in ReactJS, TailwindCSS, JavaScript, and proficient in Flask and Python.';
 
@@ -16,22 +17,25 @@ const defaultSEOConfig = {
     locale: 'id-ID',
     images: [
       {
-        url: metaImage,
+        url: metaImageV2,
         alt: 'aimdev.xyz og-image',
         width: 800,
         height: 600,
+        type: 'image/png',
       },
       {
-        url: metaImage,
+        url: metaImageV2,
         alt: 'aimdev.xyz og-image',
         width: 1200,
         height: 630,
+        type: 'image/png',
       },
       {
-        url: metaImage,
+        url: metaImageV2,
         alt: 'aimdev.xyz og-image',
         width: 1600,
         height: 900,
+        type: 'image/png',
       },
     ],
     site_name: 'Aim Dev',

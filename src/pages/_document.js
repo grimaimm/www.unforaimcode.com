@@ -48,6 +48,11 @@ export default function Document() {
         />
 
         <meta
+          property='og:keywords'
+          content='aimdev, aimm dev, aimdev.xyz, aimdev xyz, unforaimcode, webdev, aiiimmmm, muhammad rahim, web developer, belajar javascript, belajar flask python'
+        />
+
+        <meta
           name='google-site-verification'
           content='vIlIkVTp8dFcPk9yxsUAMF2aJ7IqwD-HtbinaKc4UpA'
         />
