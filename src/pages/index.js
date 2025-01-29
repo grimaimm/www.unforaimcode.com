@@ -18,7 +18,7 @@ function generateStructuredData() {
 const HomePage = () => {
   return (
     <>
-      {/* <StructuredData data={generateStructuredData()} /> */}
+      <StructuredData data={generateStructuredData()} />
       <NextSeo title='Muhammad Rahim - Personal Website' />
       <Home />
     </>

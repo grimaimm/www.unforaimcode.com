@@ -69,13 +69,6 @@ export default function App({
   }, []);
 
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
-
-  React.useEffect(() => {
-    document.querySelectorAll('meta[data-next-head]').forEach((meta) => {
-      meta.removeAttribute('data-next-head');
-    });
-  }, []);
-
   return (
     <>
       <style jsx global>
@@ -89,7 +82,7 @@ export default function App({
         `}
       </style>
       <DefaultSeo {...defaultSEOConfig} />
-      {/* <ArticleJsonLd
+      <ArticleJsonLd
         type='Person'
         url='https://aimdev.xyz'
         title='Web Developer'
@@ -98,7 +91,7 @@ export default function App({
         ]}
         authorName='Muhammad Rahim'
         description='Next SEO packages simplifies the SEO management in Next Apps with less configurations'
-      /> */}
+      />
       <SessionProvider session={session}>
         <LayoutProvider>
           <ThemeProvider>

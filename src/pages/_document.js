@@ -7,7 +7,6 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
-        {/* Icons and theme color */}
         <link
           rel='apple-touch-icon'
           sizes='180x180'
@@ -35,7 +34,6 @@ export default function Document() {
         <meta name='msapplication-TileColor' content='#09090b' />
         <meta name='theme-color' content='#09090b' />
 
-        {/* Umami Analytics Script */}
         <script
           defer
           src='https://cloud.umami.is/script.js'

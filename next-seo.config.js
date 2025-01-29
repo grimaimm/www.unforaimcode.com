@@ -35,7 +35,7 @@ const defaultSEOConfig = {
         height: 900,
       },
     ],
-    site_name: 'Aim Dev',
+    site_name: 'aimdev.xyz',
   },
   twitter: {
     handle: '@handle',
